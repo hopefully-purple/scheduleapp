@@ -16,5 +16,9 @@ class ViewController: UIViewController {
     }
 
 
+    @IBOutlet weak var labelText: UILabel!
+    @IBAction func buttonPressed(_ sender: Any) {
+        labelText.text = "party hardy"
+    }
 }
 
