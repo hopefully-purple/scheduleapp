@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Scheduling App
+//  SchedulingApp
 //
-//  Created by Ethan Christensen on 2/9/20.
+//  Created by Ethan Christensen on 3/25/20.
 //  Copyright © 2020 PWGTC. All rights reserved.
 //
 

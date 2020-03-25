@@ -1,15 +1,15 @@
 //
-//  Scheduling_AppTests.swift
-//  Scheduling AppTests
+//  SchedulingAppTests.swift
+//  SchedulingAppTests
 //
-//  Created by Ethan Christensen on 2/9/20.
+//  Created by Ethan Christensen on 3/25/20.
 //  Copyright © 2020 PWGTC. All rights reserved.
 //
 
 import XCTest
-@testable import Scheduling_App
+@testable import SchedulingApp
 
-class Scheduling_AppTests: XCTestCase {
+class SchedulingAppTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
