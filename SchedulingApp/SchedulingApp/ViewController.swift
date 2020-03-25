@@ -9,16 +9,34 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+  
+    @IBOutlet weak var labelText: UILabel!
+    
+    @IBOutlet weak var labelText2: UILabel!
+    
+    /**
+     Some sort of function
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        //buttonPressed
     }
-
-
-    @IBOutlet weak var labelText: UILabel!
-    @IBAction func buttonPressed(_ sender: Any) {
-        labelText.text = "party hardy"
+  
+  
+    /**
+     Take the user to the main page (for now)
+     Eventually we need to decide where to take the user
+     - Author:
+            Hope
+     - Version:
+            0.1
+     */
+    @IBAction func buttonPressed(_ sender: Any)
+    {
+        //labelText.text = "party hardy"
+        
+        
     }
 }
 
