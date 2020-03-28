@@ -9,6 +9,9 @@
 //import Foundation
 import UIKit
 
+/**
+ Need to change the name! This is no longer the Main View
+ */
 class MainViewController: UIViewController {
 
 

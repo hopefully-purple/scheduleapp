@@ -8,35 +8,31 @@
 
 import UIKit
 
+/**
+ This is the Main View of the app.
+ From here, users can navigate to everything in the app.
+ Users will land here after launching and after initial set up.
+ 
+ - Author: Hope Welch
+ - Version: 0.1
+ 
+ As of v0.1, this is named View Controller and the second view is named MainViewController. TODO: The naming needs to be fixed
+ */
 class ViewController: UIViewController {
   
-    @IBOutlet weak var labelText: UILabel!
-    
-    @IBOutlet weak var labelText2: UILabel!
+
     
     /**
-     Some sort of function
+     This is the viewDidLoad function for the Main View
      */
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        //buttonPressed
+       
     }
+    
+    //    var preferredDisplayMode: UISplitViewController.DisplayMode.primaryOverlay { get{} set{} }
   
-  
-    /**
-     Take the user to the main page (for now)
-     Eventually we need to decide where to take the user
-     - Author:
-            Hope
-     - Version:
-            0.1
-     */
-    @IBAction func buttonPressed(_ sender: Any)
-    {
-        //labelText.text = "party hardy"
-        
-        
-    }
+//    var displayModeButtonItem: UIBarButtonItem { get{} }
+    
 }
 
