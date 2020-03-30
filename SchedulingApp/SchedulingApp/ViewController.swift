@@ -20,21 +20,23 @@ import UIKit
  */
 class ViewController: UIViewController, UITextFieldDelegate {
     
-    var name: String = ""
-    
+    //This is the textfield for the name of the schedule
     @IBOutlet weak var scheduleNameL: UITextField!
-    
-    @IBOutlet weak var testLabel1: UILabel!
-    
     
     /**
      This is the viewDidLoad function for the Main View
+     
+     A bit of code sets up the return key functionality
+     Set the scheduleNameL placeholder text to the appropriate text
      */
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Bit of code taken from https://stackoverflow.com/questions/11553396/how-to-add-an-action-on-uitextfield-return-key
         self.scheduleNameL.addTarget(self, action: #selector(onReturn), for: UIControl.Event.editingDidEndOnExit)
+        
+        //TODO: Get appropriate inforamtion from the model to determine the correct placeholder name
+        scheduleNameL.placeholder = "My Schedule"
         
     }
     
@@ -46,9 +48,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
      User should be able to either hit return or tap outside of the field to make it save and for the keyboard to disappear.
      
         Need to grab the input and update the Model
-        Need to display corresponding default text at first
      
-     TODO: Determine if text field is the right object.
+     TODO: Fix the cursor to be in the middle! (And a few other nitpickies that bug me)
      
      The function declaration and the first line of code is taken from https://stackoverflow.com/questions/11553396/how-to-add-an-action-on-uitextfield-return-key
      */
@@ -56,9 +57,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //scheduleNameL is no longer the first responder
     self.scheduleNameL.resignFirstResponder()
 
-    //Change the label name to the input. TODO: Delete this temp feature
-    name = scheduleNameL.text!
-    testLabel1.text = name
+    //Update Model!
    }
     
     
