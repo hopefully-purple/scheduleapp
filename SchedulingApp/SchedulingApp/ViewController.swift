@@ -24,7 +24,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var scheduleNameL: UITextField!
     
-    @IBOutlet weak var testLabel: UILabel!
+    @IBOutlet weak var testLabel1: UILabel!
+    
     
     /**
      This is the viewDidLoad function for the Main View
@@ -57,7 +58,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     //Change the label name to the input. TODO: Delete this temp feature
     name = scheduleNameL.text!
-    testLabel.text = name
+    testLabel1.text = name
    }
     
     
