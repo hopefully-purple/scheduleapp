@@ -29,12 +29,22 @@
                                     <action selector="onReturn" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Waf-km-S3n"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRw-zB-v3c">
-                                <rect key="frame" x="54" y="189" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YxX-rf-Ah5">
+                                <rect key="frame" x="167" y="382" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="navButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pBc-hV-6Cc"/>
+                                    <segue destination="FAi-T8-Qvi" kind="popoverPresentation" popoverAnchorView="YxX-rf-Ah5" id="T1h-59-rCI">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rVA-hK-YPF">
+                                <rect key="frame" x="167" y="586" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="FAi-T8-Qvi" kind="presentation" id="0Tw-iR-FQp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -42,7 +52,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="navButton" destination="HRw-zB-v3c" id="Qvi-rn-Wyy"/>
                         <outlet property="scheduleNameL" destination="TxD-Iw-dCB" id="uRq-bf-Sn3"/>
                     </connections>
                 </viewController>
@@ -50,23 +59,55 @@
             </objects>
             <point key="canvasLocation" x="-3164" y="-1740"/>
         </scene>
-        <!--Main View Controller-->
+        <!--Menu View Controller-->
         <scene sceneID="cAk-SN-pmg">
             <objects>
-                <viewController id="FAi-T8-Qvi" customClass="MainViewController" customModule="SchedulingApp" customModuleProvider="target" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kug-KH-aBl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="FAi-T8-Qvi" customClass="MenuViewController" customModule="SchedulingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TOV-Kg-gYy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="iE1-UG-vPM"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Tsh-0G-VFK"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Kug-KH-aBl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2435" y="-1740"/>
         </scene>
+        <!--Filter View Controller-->
+        <scene sceneID="5e4-Xg-MoR">
+            <objects>
+                <viewController id="bYM-6c-3uE" customClass="FilterViewController" customModule="SchedulingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wjd-mM-VQw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="EwF-TI-8Ca"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cb5-Vn-ItH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2436" y="-1058"/>
+        </scene>
+        <!--Profile Setting View Controller-->
+        <scene sceneID="50r-nQ-cH1">
+            <objects>
+                <viewController id="xsy-S8-Aam" customClass="ProfileSettingViewController" customModule="SchedulingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OZF-om-oM6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="AMy-Iq-FLx"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6za-db-wFe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3152" y="-1058"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="T1h-59-rCI"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="person.crop.circle" catalog="system" width="128" height="121"/>
     </resources>

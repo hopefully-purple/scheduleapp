@@ -12,15 +12,13 @@ import UIKit
 /**
  Need to change the name! This is no longer the Main View
  */
-class MainViewController: UISplitViewController {
+class MenuViewController: UISplitViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-    @IBAction func navButton(_ sender: Any) {
-       // splitViewController(MainViewController, ViewController)
-    }
+  
 
     func splitViewController(_ splitViewController: UISplitViewController,
     separateSecondaryFrom primaryViewController: UIViewController) -> UIViewController?
