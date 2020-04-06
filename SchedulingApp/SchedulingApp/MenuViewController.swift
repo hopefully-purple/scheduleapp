@@ -10,20 +10,12 @@
 import UIKit
 
 /**
- Need to change the name! This is no longer the Main View
+The menu
  */
-class MenuViewController: UISplitViewController {
+class MenuViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-
-  
-
-    func splitViewController(_ splitViewController: UISplitViewController,
-    separateSecondaryFrom primaryViewController: UIViewController) -> UIViewController?
-    {
-        return  nil
     }
     
     

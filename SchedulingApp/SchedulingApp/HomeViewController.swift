@@ -19,7 +19,7 @@ import EventKit
  
  As of v0.1, this is named View Controller and the second view is named MainViewController. TODO: The naming needs to be fixed
  */
-class ViewController: UIViewController, UITextFieldDelegate {
+class HomeViewController: UIViewController, UITextFieldDelegate {
     
     
     
