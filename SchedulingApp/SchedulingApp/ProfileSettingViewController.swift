@@ -10,6 +10,8 @@ import UIKit
 
 class ProfileSettingViewController: UIViewController {
 
+    //var topView: UIView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

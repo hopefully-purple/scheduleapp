@@ -22,6 +22,8 @@ import EventKit
 class HomeViewController: UIViewController, UITextFieldDelegate {
     
     let transition = SlideInTransition()
+    //optional view switch
+    var topView: UIView?
     
     //This is the textfield for the name of the schedule
     //@IBOutlet weak var scheduleNameL: UITextField!
@@ -46,14 +48,47 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     @IBAction func didTabMenu(_ sender: UIBarButtonItem) {
         
         guard let menuViewController = storyboard?.instantiateViewController(withIdentifier:
-            "MenuViewController") else { return }
+            "MenuViewController") as? MenuViewController else { return }
+        menuViewController.didTapMenuType = { menuType in
+            self.transitionToNew(menuType)
+        }
         menuViewController.modalPresentationStyle = .overCurrentContext
         menuViewController.transitioningDelegate = self
         present(menuViewController, animated: true)
          
     }
     
-    
+    func transitionToNew(_ menuType: MenuType) {
+        let title = String(describing: menuType).capitalized
+        self.title = title
+        
+        //ep 3 minute 9, he talks about some tidbits that he doesn't code
+        //Here is where I might figure out how to simply switch screens
+        //All sections of code involving this will be labelled like:
+        //optional view switch
+        topView?.removeFromSuperview()
+        switch menuType {
+        case .profile:
+            let view = UIView()
+            view.backgroundColor = .yellow
+            view.frame = self.view.bounds
+            self.view.addSubview(view)
+            self.topView = view
+        case .camera:
+            let view = UIView()
+            view.backgroundColor = .blue
+            view.frame = self.view.bounds
+            self.view.addSubview(view)
+            self.topView = view
+        default:
+            let view = UIView()
+            view.backgroundColor = .yellow
+            view.frame = self.view.bounds
+            self.view.addSubview(view)
+            self.topView = view
+            
+        }
+    }
     
     /**
      This function belongs to the text field that displays the name of the current schedule.
