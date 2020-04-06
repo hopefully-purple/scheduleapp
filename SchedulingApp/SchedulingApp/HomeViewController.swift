@@ -26,7 +26,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
      //var splitViewControllerDelegate: UISplitViewControllerDelegate?
     
     //This is the textfield for the name of the schedule
-    @IBOutlet weak var scheduleNameL: UITextField!
+    //@IBOutlet weak var scheduleNameL: UITextField!
     
     /**
      This is the viewDidLoad function for the Main View
@@ -38,10 +38,10 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         //Bit of code taken from https://stackoverflow.com/questions/11553396/how-to-add-an-action-on-uitextfield-return-key
-        self.scheduleNameL.addTarget(self, action: #selector(onReturn), for: UIControl.Event.editingDidEndOnExit)
+        //self.scheduleNameL.addTarget(self, action: #selector(onReturn), for: UIControl.Event.editingDidEndOnExit)
         
         //TODO: Get appropriate inforamtion from the model to determine the correct placeholder name
-        scheduleNameL.placeholder = "My Schedule"
+       // scheduleNameL.placeholder = "My Schedule"
         
         //splitViewController(splitViewControllerDelegate, primaryOverlay)
         
@@ -60,12 +60,12 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
      
      The function declaration and the first line of code is taken from https://stackoverflow.com/questions/11553396/how-to-add-an-action-on-uitextfield-return-key
      */
-   @IBAction func onReturn() {
+  // @IBAction func onReturn() {
     //scheduleNameL is no longer the first responder
-    self.scheduleNameL.resignFirstResponder()
+    //self.scheduleNameL.resignFirstResponder()
 
     //Update Model!
-   }
+   //}
     
 //    @IBAction func saveNewCalendarAction(_ sender: UIBarButtonItem) {
 //        // Create an Event Store instance
