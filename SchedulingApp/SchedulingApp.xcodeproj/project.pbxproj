@@ -10,6 +10,7 @@
 		2E140872242BB35C0090953D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E140871242BB35C0090953D /* MenuViewController.swift */; };
 		2E7CCD5C243AA0D800BB211D /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CCD5B243AA0D800BB211D /* FilterViewController.swift */; };
 		2E7CCD5E243AA20900BB211D /* ProfileSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CCD5D243AA20900BB211D /* ProfileSettingViewController.swift */; };
+		2E7CCD60243BC32E00BB211D /* SlideInTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CCD5F243BC32E00BB211D /* SlideInTransition.swift */; };
 		6E407429242BA2E10024923B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E407428242BA2E10024923B /* AppDelegate.swift */; };
 		6E40742B242BA2E10024923B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40742A242BA2E10024923B /* SceneDelegate.swift */; };
 		6E40742D242BA2E10024923B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40742C242BA2E10024923B /* HomeViewController.swift */; };
@@ -41,6 +42,7 @@
 		2E140871242BB35C0090953D /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		2E7CCD5B243AA0D800BB211D /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		2E7CCD5D243AA20900BB211D /* ProfileSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewController.swift; sourceTree = "<group>"; };
+		2E7CCD5F243BC32E00BB211D /* SlideInTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInTransition.swift; sourceTree = "<group>"; };
 		6E407425242BA2E10024923B /* SchedulingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchedulingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E407428242BA2E10024923B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E40742A242BA2E10024923B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				6E407433242BA2E60024923B /* LaunchScreen.storyboard */,
 				6E407436242BA2E60024923B /* Info.plist */,
 				2E140871242BB35C0090953D /* MenuViewController.swift */,
+				2E7CCD5F243BC32E00BB211D /* SlideInTransition.swift */,
 			);
 			path = SchedulingApp;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				6E407429242BA2E10024923B /* AppDelegate.swift in Sources */,
 				6E40742B242BA2E10024923B /* SceneDelegate.swift in Sources */,
 				2E140872242BB35C0090953D /* MenuViewController.swift in Sources */,
+				2E7CCD60243BC32E00BB211D /* SlideInTransition.swift in Sources */,
 				2E7CCD5C243AA0D800BB211D /* FilterViewController.swift in Sources */,
 				2E7CCD5E243AA20900BB211D /* ProfileSettingViewController.swift in Sources */,
 			);

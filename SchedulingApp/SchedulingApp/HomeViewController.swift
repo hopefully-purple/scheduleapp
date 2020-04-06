@@ -21,9 +21,7 @@ import EventKit
  */
 class HomeViewController: UIViewController, UITextFieldDelegate {
     
-    
-    
-     //var splitViewControllerDelegate: UISplitViewControllerDelegate?
+    let transition = SlideInTransition()
     
     //This is the textfield for the name of the schedule
     //@IBOutlet weak var scheduleNameL: UITextField!
@@ -43,9 +41,19 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         //TODO: Get appropriate inforamtion from the model to determine the correct placeholder name
        // scheduleNameL.placeholder = "My Schedule"
         
-        //splitViewController(splitViewControllerDelegate, primaryOverlay)
-        
     }
+    
+    @IBAction func didTabMenu(_ sender: UIBarButtonItem) {
+        
+        guard let menuViewController = storyboard?.instantiateViewController(withIdentifier:
+            "MenuViewController") else { return }
+        menuViewController.modalPresentationStyle = .overCurrentContext
+        menuViewController.transitioningDelegate = self
+        present(menuViewController, animated: true)
+         
+    }
+    
+    
     
     /**
      This function belongs to the text field that displays the name of the current schedule.
@@ -66,6 +74,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
 
     //Update Model!
    //}
+    
+    
     
 //    @IBAction func saveNewCalendarAction(_ sender: UIBarButtonItem) {
 //        // Create an Event Store instance
@@ -105,3 +115,14 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
 //    }
 }
 
+extension HomeViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.isPresenting = true
+        return transition
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.isPresenting = false
+        return transition
+    }
+}

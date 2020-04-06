@@ -10,7 +10,7 @@
         <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SchedulingApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="SchedulingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +27,7 @@
                     <navigationItem key="navigationItem" title="Home" id="d5h-fZ-fLz">
                         <barButtonItem key="leftBarButtonItem" title="Menu" image="menutemp" id="K3R-8f-5ZI">
                             <connections>
-                                <segue destination="FZU-BY-gey" kind="show" id="cui-VJ-5kJ"/>
+                                <action selector="didTabMenu:" destination="BYZ-38-t0r" id="bRw-0h-nzj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -39,11 +39,11 @@
         <!--Menu View Controller-->
         <scene sceneID="uOa-OT-w5U">
             <objects>
-                <tableViewController id="FZU-BY-gey" customClass="MenuViewController" customModule="SchedulingApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MenuViewController" id="FZU-BY-gey" customClass="MenuViewController" customModule="SchedulingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Mvo-64-K1S">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
                             <tableViewSection id="LNf-bQ-SP5">
                                 <cells>
