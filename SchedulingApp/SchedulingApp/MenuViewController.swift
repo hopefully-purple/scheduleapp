@@ -10,9 +10,11 @@
 import UIKit
 
 enum MenuType: Int {
-    case home
-    case camera
     case profile
+    case mySchedule
+    case groupSchedule
+    case createNew
+    case settings
 }
 
 /**
@@ -32,7 +34,20 @@ class MenuViewController: UITableViewController {
         
         dismiss(animated: true) { [weak self] in
             print("Dismissing: \(menuType)")
-            self?.didTapMenuType?(menuType)
+            switch menuType{
+                case .profile:
+                self?.didTapMenuType?(menuType)
+            case .groupSchedule:
+                self?.didTapMenuType?(menuType)
+            case .mySchedule:
+                self?.didTapMenuType?(menuType)
+            case .createNew:
+                self?.didTapMenuType?(menuType)
+                
+            default:
+                break;
+            }
+            
         }
     }
     

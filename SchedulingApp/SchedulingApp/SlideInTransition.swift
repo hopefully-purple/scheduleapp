@@ -14,6 +14,9 @@ class SlideInTransition: NSObject, UIViewControllerAnimatedTransitioning {
     
     let dimmingView = UIView()
     
+    /**
+     Frame rate for the slide transition
+     */
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.3
     }
@@ -25,6 +28,7 @@ class SlideInTransition: NSObject, UIViewControllerAnimatedTransitioning {
        
         let containerView = transitionContext.containerView
         
+        //0.8 makes it slid 80% across
         let finalWidth = toViewController.view.bounds.width * 0.8
         let finalHeight = toViewController.view.bounds.height
         
@@ -34,6 +38,7 @@ class SlideInTransition: NSObject, UIViewControllerAnimatedTransitioning {
             dimmingView.alpha = 0.0
             containerView.addSubview(dimmingView)
             dimmingView.frame = containerView.bounds
+            
             //Add menu view controller to container
             containerView.addSubview(toViewController.view)
             

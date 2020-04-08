@@ -14,7 +14,7 @@ class ProfileSettingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("YOU MADE IT to the profile code")
         // Do any additional setup after loading the view.
     }
     

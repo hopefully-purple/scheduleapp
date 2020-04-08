@@ -62,31 +62,39 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         let title = String(describing: menuType).capitalized
         self.title = title
         
+        //OK. The next bit of code I want to save for the Group option. It might be what I want to use
+        //when I don't want to change the controller, and just change the data/info inside it.
+        //So I'm going to comment the whole thing out for now until I figure a way to make it unique to the group section
+        
         //ep 3 minute 9, he talks about some tidbits that he doesn't code
         //Here is where I might figure out how to simply switch screens
         //All sections of code involving this will be labelled like:
         //optional view switch
         topView?.removeFromSuperview()
+        //topView?.removeFromParent()
         switch menuType {
         case .profile:
-            let view = UIView()
-            view.backgroundColor = .yellow
-            view.frame = self.view.bounds
-            self.view.addSubview(view)
-            self.topView = view
-        case .camera:
-            let view = UIView()
-            view.backgroundColor = .blue
-            view.frame = self.view.bounds
-            self.view.addSubview(view)
-            self.topView = view
+            print("helloooooo")
+            print(storyboard as Any)
+            guard let profileViewController = storyboard?.instantiateViewController(withIdentifier:
+                "ProfileSettingViewController") as? ProfileSettingViewController else { return }
+            //profileViewController.didTapMenuType = { profileType in
+              //  self.transitionToNew(profileType)
+            //}
+            print("Inside the profile case")
+            profileViewController.modalPresentationStyle = .popover
+            //profileViewController.transitioningDelegate = self
+            present(profileViewController, animated: true)
+            //self.performSegue(withIdentifier: "profileSettingSegue", sender: self)
+        case .createNew:
+            print("inside crate new switch")
         default:
-            let view = UIView()
-            view.backgroundColor = .yellow
-            view.frame = self.view.bounds
-            self.view.addSubview(view)
-            self.topView = view
-            
+            break;
+//              let view = UIView()
+//            view.backgroundColor = .yellow
+//            view.frame = self.view.bounds
+//            self.view.addSubview(view)
+//            self.topView = view
         }
     }
     
