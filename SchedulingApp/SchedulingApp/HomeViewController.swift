@@ -74,18 +74,10 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         //topView?.removeFromParent()
         switch menuType {
         case .profile:
-            print("helloooooo")
-            print(storyboard as Any)
             guard let profileViewController = storyboard?.instantiateViewController(withIdentifier:
                 "ProfileSettingViewController") as? ProfileSettingViewController else { return }
-            //profileViewController.didTapMenuType = { profileType in
-              //  self.transitionToNew(profileType)
-            //}
-            print("Inside the profile case")
             profileViewController.modalPresentationStyle = .popover
-            //profileViewController.transitioningDelegate = self
             present(profileViewController, animated: true)
-            //self.performSegue(withIdentifier: "profileSettingSegue", sender: self)
         case .createNew:
             print("inside crate new switch")
         default:
