@@ -22,30 +22,17 @@ import Foundation
 class Profile
 {
     var name: String
-    var email: String
+
     //Eventually, we'll probably have a friend count, schedule count, scheduleID, etc
     
-    init(name: String, email: String)
+    /**
+     Initializer
+     */
+    init()
     {
-        self.name = name
-        self.email = email
+        self.name = ""
     }
     
-    /**
-     Getter for the name property
-        - Is that how Swift works or is there a different way everyone else does?
-     */
-    func getName() -> String {
-        return name
-    }
-    
-    /**
-     Getter for the email property
-        - Is that how Swift works or is there a different way everyone else does?
-     */
-    func getEmail() -> String {
-        return email
-    }
     
     
 }

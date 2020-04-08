@@ -74,7 +74,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     }
     
     func transitionToNew(_ menuType: MenuType) {
-        //Change the HomeView title
+        //Change the HomeView title MAJOR Q:: DOES THIS BELONG HERE WITH MVC??
         var title = String(describing: menuType)
         switch title{
         case "profile":

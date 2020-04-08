@@ -107,18 +107,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		2E3B643C243E6927000ADD0C /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				6E40742C242BA2E10024923B /* HomeViewController.swift */,
-				2E4A7160243E38560002DECF /* AddPeopleViewController.swift */,
-				2E7CCD5D243AA20900BB211D /* ProfileSettingViewController.swift */,
-				2E7CCD5B243AA0D800BB211D /* FilterViewController.swift */,
-				2E140871242BB35C0090953D /* MenuViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		6E40741C242BA2E10024923B = {
 			isa = PBXGroup;
 			children = (
@@ -146,7 +134,11 @@
 				6E40742A242BA2E10024923B /* SceneDelegate.swift */,
 				2E3B643A243E68F6000ADD0C /* Model */,
 				2E3B643B243E6919000ADD0C /* View */,
-				2E3B643C243E6927000ADD0C /* Controller */,
+				6E40742C242BA2E10024923B /* HomeViewController.swift */,
+				2E4A7160243E38560002DECF /* AddPeopleViewController.swift */,
+				2E7CCD5D243AA20900BB211D /* ProfileSettingViewController.swift */,
+				2E7CCD5B243AA0D800BB211D /* FilterViewController.swift */,
+				2E140871242BB35C0090953D /* MenuViewController.swift */,
 				6E40742E242BA2E10024923B /* Main.storyboard */,
 				6E407431242BA2E60024923B /* Assets.xcassets */,
 				6E407433242BA2E60024923B /* LaunchScreen.storyboard */,
