@@ -43,7 +43,7 @@ class MenuViewController: UITableViewController {
                 self?.didTapMenuType?(menuType)
             case .createNew:
                 self?.didTapMenuType?(menuType)
-                
+                //Here might be where I want to create a new schedule under groups. Tricky part is, internet is saying that has to do with Model
             default:
                 break;
             }

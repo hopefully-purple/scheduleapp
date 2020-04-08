@@ -2,6 +2,8 @@
 //  ViewController.swift
 //  SchedulingApp
 //
+// https://www.raywenderlich.com/1000705-model-view-controller-mvc-in-ios-a-modern-approach
+// ^^ This is about how to use MVC with iOS development!!
 //  Created by Ethan Christensen on 3/25/20.
 //  Copyright © 2020 PWGTC. All rights reserved.
 //
@@ -45,6 +47,19 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    /**
+     This is the action for the filter button
+     */
+    @IBAction func didFilters(_ sender: UIBarButtonItem) {
+        guard let filterViewController = storyboard?.instantiateViewController(withIdentifier:
+            "FilterViewController") as? FilterViewController else { return }
+        filterViewController.modalPresentationStyle = .popover
+        present(filterViewController, animated: true)
+    }
+    
+    /**
+     This is the action for the menu button
+     */
     @IBAction func didTabMenu(_ sender: UIBarButtonItem) {
         
         guard let menuViewController = storyboard?.instantiateViewController(withIdentifier:
@@ -59,19 +74,29 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     }
     
     func transitionToNew(_ menuType: MenuType) {
-        let title = String(describing: menuType).capitalized
-        self.title = title
-        
-        //OK. The next bit of code I want to save for the Group option. It might be what I want to use
-        //when I don't want to change the controller, and just change the data/info inside it.
-        //So I'm going to comment the whole thing out for now until I figure a way to make it unique to the group section
-        
-        //ep 3 minute 9, he talks about some tidbits that he doesn't code
-        //Here is where I might figure out how to simply switch screens
-        //All sections of code involving this will be labelled like:
-        //optional view switch
-        topView?.removeFromSuperview()
-        //topView?.removeFromParent()
+        //Change the HomeView title
+        var title = String(describing: menuType)
+        switch title{
+        case "profile":
+            break; //We don't want the current schedule to change!
+        case "mySchedule":
+            title = "My Schedule"
+            self.title = title
+        case "groupSchedule":
+            title = "Group Schedule" //Eventually get specific info
+            self.title = title
+        case "createNew":
+            title = "New Group"
+            self.title = title
+        case "settings":
+            break;
+        default:
+            break;
+        }
+       
+        //topView?.removeFromSuperview() //part of the change the view color code
+
+        //Action to perform depending on which menuType was tapped
         switch menuType {
         case .profile:
             guard let profileViewController = storyboard?.instantiateViewController(withIdentifier:
@@ -79,7 +104,13 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
             profileViewController.modalPresentationStyle = .popover
             present(profileViewController, animated: true)
         case .createNew:
-            print("inside crate new switch")
+            guard let addPViewController = storyboard?.instantiateViewController(withIdentifier:
+                "AddPeopleViewController") as? AddPeopleViewController else { return }
+            addPViewController.modalPresentationStyle = .pageSheet
+            present(addPViewController, animated: true)
+        case .groupSchedule:
+            print("Groups")
+            //This might be where we reveal the Add button?
         default:
             break;
 //              let view = UIView()
@@ -88,7 +119,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
 //            self.view.addSubview(view)
 //            self.topView = view
         }
-    }
+    
+    }//the end of transitionToNew in case you are lost
     
     /**
      This function belongs to the text field that displays the name of the current schedule.

@@ -2,6 +2,10 @@
 //  SlideInTransition.swift
 //  SchedulingApp
 //
+//https://www.raywenderlich.com/3636807-uipresentationcontroller-tutorial-getting-started
+//^^This is a link to a slide in transition tutorial that looks very good and detailed, different from the video one.
+//  What's great is it's a left, right, and bottom slide, which was my original original idea.
+//
 //  Created by Hope Welch on 4/6/20.
 //  Copyright © 2020 PWGTC. All rights reserved.
 //

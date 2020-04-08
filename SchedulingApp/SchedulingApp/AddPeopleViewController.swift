@@ -1,20 +1,18 @@
 //
-//  ProfileSettingViewController.swift
+//  AddPeopleViewController.swift
 //  SchedulingApp
 //
-//  Created by Hope Welch on 4/5/20.
+//  Created by Hope Welch on 4/8/20.
 //  Copyright © 2020 PWGTC. All rights reserved.
 //
 
 import UIKit
 
-class ProfileSettingViewController: UIViewController {
+class AddPeopleViewController: UIViewController {
 
-    //var topView: UIView?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //print("YOU MADE IT to the profile code")
+
         // Do any additional setup after loading the view.
     }
     
