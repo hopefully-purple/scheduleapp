@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2E140872242BB35C0090953D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E140871242BB35C0090953D /* MenuViewController.swift */; };
+		2E3B643E243E6B58000ADD0C /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3B643D243E6B58000ADD0C /* Profile.swift */; };
+		2E3B6440243E7058000ADD0C /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3B643F243E7058000ADD0C /* Schedule.swift */; };
 		2E4A7161243E38560002DECF /* AddPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4A7160243E38560002DECF /* AddPeopleViewController.swift */; };
 		2E7CCD5C243AA0D800BB211D /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CCD5B243AA0D800BB211D /* FilterViewController.swift */; };
 		2E7CCD5E243AA20900BB211D /* ProfileSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CCD5D243AA20900BB211D /* ProfileSettingViewController.swift */; };
@@ -41,6 +43,8 @@
 
 /* Begin PBXFileReference section */
 		2E140871242BB35C0090953D /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		2E3B643D243E6B58000ADD0C /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		2E3B643F243E7058000ADD0C /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		2E4A7160243E38560002DECF /* AddPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPeopleViewController.swift; sourceTree = "<group>"; };
 		2E7CCD5B243AA0D800BB211D /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		2E7CCD5D243AA20900BB211D /* ProfileSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +90,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E3B643A243E68F6000ADD0C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2E3B643D243E6B58000ADD0C /* Profile.swift */,
+				2E3B643F243E7058000ADD0C /* Schedule.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2E3B643B243E6919000ADD0C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2E7CCD5F243BC32E00BB211D /* SlideInTransition.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2E3B643C243E6927000ADD0C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6E40742C242BA2E10024923B /* HomeViewController.swift */,
+				2E4A7160243E38560002DECF /* AddPeopleViewController.swift */,
+				2E7CCD5D243AA20900BB211D /* ProfileSettingViewController.swift */,
+				2E7CCD5B243AA0D800BB211D /* FilterViewController.swift */,
+				2E140871242BB35C0090953D /* MenuViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		6E40741C242BA2E10024923B = {
 			isa = PBXGroup;
 			children = (
@@ -111,16 +144,13 @@
 			children = (
 				6E407428242BA2E10024923B /* AppDelegate.swift */,
 				6E40742A242BA2E10024923B /* SceneDelegate.swift */,
-				6E40742C242BA2E10024923B /* HomeViewController.swift */,
-				2E4A7160243E38560002DECF /* AddPeopleViewController.swift */,
-				2E7CCD5D243AA20900BB211D /* ProfileSettingViewController.swift */,
-				2E7CCD5B243AA0D800BB211D /* FilterViewController.swift */,
-				2E140871242BB35C0090953D /* MenuViewController.swift */,
+				2E3B643A243E68F6000ADD0C /* Model */,
+				2E3B643B243E6919000ADD0C /* View */,
+				2E3B643C243E6927000ADD0C /* Controller */,
 				6E40742E242BA2E10024923B /* Main.storyboard */,
 				6E407431242BA2E60024923B /* Assets.xcassets */,
 				6E407433242BA2E60024923B /* LaunchScreen.storyboard */,
 				6E407436242BA2E60024923B /* Info.plist */,
-				2E7CCD5F243BC32E00BB211D /* SlideInTransition.swift */,
 			);
 			path = SchedulingApp;
 			sourceTree = "<group>";
@@ -281,6 +311,8 @@
 				2E7CCD60243BC32E00BB211D /* SlideInTransition.swift in Sources */,
 				2E4A7161243E38560002DECF /* AddPeopleViewController.swift in Sources */,
 				2E7CCD5C243AA0D800BB211D /* FilterViewController.swift in Sources */,
+				2E3B643E243E6B58000ADD0C /* Profile.swift in Sources */,
+				2E3B6440243E7058000ADD0C /* Schedule.swift in Sources */,
 				2E7CCD5E243AA20900BB211D /* ProfileSettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
