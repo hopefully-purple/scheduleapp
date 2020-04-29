@@ -28,6 +28,21 @@ class MenuViewController: UITableViewController {
         super.viewDidLoad()
     }
     
+    @IBAction func tapGesture(_ sender: UITapGestureRecognizer) {
+        guard sender.view != nil else { return }
+        
+        
+        //if didTap x> 80% then dismiss view
+        //x = 331.0 -> that's the 80% I do believe
+        //var range = toViewController.view.bounds.width * 0.8
+        
+        print(sender.location(in: sender.view).x)
+        
+        //sender.location(in: sender.view).self)
+    
+        
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         guard let menuType = MenuType(rawValue:  indexPath.row) else { return }
