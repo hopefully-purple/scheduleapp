@@ -10,6 +10,7 @@
 
 import UIKit
 import EventKit
+import FSCalendar
 
 /**
  This is the Main View of the app.
@@ -21,7 +22,9 @@ import EventKit
  
  As of v0.1, this is named View Controller and the second view is named MainViewController. TODO: The naming needs to be fixed
  */
-class HomeViewController: UIViewController, UITextFieldDelegate {
+class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDelegate {
+    
+    @IBOutlet weak var calendar: FSCalendar!
     
     let transition = SlideInTransition()
     //optional view switch
@@ -39,12 +42,21 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        calendar.delegate = self
+        
         //Bit of code taken from https://stackoverflow.com/questions/11553396/how-to-add-an-action-on-uitextfield-return-key
         //self.scheduleNameL.addTarget(self, action: #selector(onReturn), for: UIControl.Event.editingDidEndOnExit)
         
         //TODO: Get appropriate inforamtion from the model to determine the correct placeholder name
        // scheduleNameL.placeholder = "My Schedule"
         
+    }
+    
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE MM-dd-YYYY"
+        let string = formatter.string(from: date)
+        print(string)
     }
     
     /**
@@ -180,6 +192,18 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
 //            //self.present(alert, animated: true, completion: nil)
 //        }
 //    }
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 extension HomeViewController: UIViewControllerTransitioningDelegate {
