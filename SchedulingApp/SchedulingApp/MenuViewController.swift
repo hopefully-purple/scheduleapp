@@ -43,16 +43,7 @@ class MenuViewController: UITableViewController {
 
    // }
     
-//    let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.handleTap(_:)))
-//            tap.delegate = self
-//            self.view.addGestureRecognizer(tap)
-//
-//
-//
-//    func handleTap(sender: UITapGestureRecognizer? = nil)
-//        {
-//            hideView()
-//        }
+
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         

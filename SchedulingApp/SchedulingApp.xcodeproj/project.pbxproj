@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,7 @@
 		2E140872242BB35C0090953D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E140871242BB35C0090953D /* MenuViewController.swift */; };
 		2E3B643E243E6B58000ADD0C /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3B643D243E6B58000ADD0C /* Profile.swift */; };
 		2E3B6440243E7058000ADD0C /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3B643F243E7058000ADD0C /* Schedule.swift */; };
+		2E416FFC246355690083A650 /* CodeDump.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E416FFB246355690083A650 /* CodeDump.swift */; };
 		2E4A7161243E38560002DECF /* AddPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4A7160243E38560002DECF /* AddPeopleViewController.swift */; };
 		2E7CCD5C243AA0D800BB211D /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CCD5B243AA0D800BB211D /* FilterViewController.swift */; };
 		2E7CCD5E243AA20900BB211D /* ProfileSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CCD5D243AA20900BB211D /* ProfileSettingViewController.swift */; };
@@ -49,6 +50,7 @@
 		2E140871242BB35C0090953D /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		2E3B643D243E6B58000ADD0C /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		2E3B643F243E7058000ADD0C /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		2E416FFB246355690083A650 /* CodeDump.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDump.swift; sourceTree = "<group>"; };
 		2E4A7160243E38560002DECF /* AddPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPeopleViewController.swift; sourceTree = "<group>"; };
 		2E7CCD5B243AA0D800BB211D /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		2E7CCD5D243AA20900BB211D /* ProfileSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				6E407431242BA2E60024923B /* Assets.xcassets */,
 				6E407433242BA2E60024923B /* LaunchScreen.storyboard */,
 				6E407436242BA2E60024923B /* Info.plist */,
+				2E416FFB246355690083A650 /* CodeDump.swift */,
 			);
 			path = SchedulingApp;
 			sourceTree = "<group>";
@@ -202,7 +205,6 @@
 				95C97EF69714BF46DED11EFA /* Pods-SchedulingAppTests.debug.xcconfig */,
 				FC8DE129ABBDF3AE9BC0BBE5 /* Pods-SchedulingAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -447,6 +449,7 @@
 			files = (
 				6E40742D242BA2E10024923B /* HomeViewController.swift in Sources */,
 				6E407429242BA2E10024923B /* AppDelegate.swift in Sources */,
+				2E416FFC246355690083A650 /* CodeDump.swift in Sources */,
 				6E40742B242BA2E10024923B /* SceneDelegate.swift in Sources */,
 				2E140872242BB35C0090953D /* MenuViewController.swift in Sources */,
 				2E7CCD60243BC32E00BB211D /* SlideInTransition.swift in Sources */,
