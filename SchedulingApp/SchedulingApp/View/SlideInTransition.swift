@@ -18,14 +18,25 @@ import UIKit
 class SlideInTransition: NSObject, UIViewControllerAnimatedTransitioning {
 
     var isPresenting = false
-    
+    var dismissTap = false
     let dimmingView = UIView()
-    
+    //let presentingViewController = UIViewController?
     /**
      Frame rate for the slide transition
      */
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.3
+    }
+    
+    @objc func handleTap(recognizer: UITapGestureRecognizer) {
+       // presentingViewController.dismiss(animated: true)
+        print("HANDLETAP SLIDE")
+        dismissTap = true
+    }
+    
+    func getDismissTap() -> Bool
+    {
+        return dismissTap
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
@@ -38,13 +49,18 @@ class SlideInTransition: NSObject, UIViewControllerAnimatedTransitioning {
         //0.8 makes it slid 80% across
         let finalWidth = toViewController.view.bounds.width * 0.8
         let finalHeight = toViewController.view.bounds.height
-        
+        print("Inside SlideInTransition->animateTransition->before if isPresenting")
         if isPresenting {
             //Add dimming view
+            dimmingView.translatesAutoresizingMaskIntoConstraints = false
             dimmingView.backgroundColor = .black
             dimmingView.alpha = 0.0
             containerView.addSubview(dimmingView)
             dimmingView.frame = containerView.bounds
+            print("About to declare tap recognizer in SLide")
+            let recognizer = UITapGestureRecognizer(target: self,
+                                                    action: #selector(handleTap(recognizer:)))
+            dimmingView.addGestureRecognizer(recognizer)
             
             //Add menu view controller to container
             containerView.addSubview(toViewController.view)
@@ -52,7 +68,8 @@ class SlideInTransition: NSObject, UIViewControllerAnimatedTransitioning {
             //Initial frame off the screen
             toViewController.view.frame =  CGRect(x: -finalWidth, y: 0, width: finalWidth, height: finalHeight)
         }
-        
+
+
         //Animate on screen
         let transform = {
             self.dimmingView.alpha = 0.5
@@ -64,7 +81,7 @@ class SlideInTransition: NSObject, UIViewControllerAnimatedTransitioning {
             self.dimmingView.alpha = 0.0
             fromViewController.view.transform = .identity
         }
-        
+        //print("in SlideInTransition after let identity")
         //Animation of the transition
         let duration = transitionDuration(using: transitionContext)
         let isCancelled = transitionContext.transitionWasCancelled

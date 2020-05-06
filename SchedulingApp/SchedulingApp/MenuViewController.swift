@@ -20,7 +20,7 @@ enum MenuType: Int {
 /**
 The menu
  */
-class MenuViewController: UITableViewController {
+class MenuViewController: UITableViewController, UIGestureRecognizerDelegate {
 
     var didTapMenuType: ((MenuType) -> Void)?
     
@@ -43,16 +43,11 @@ class MenuViewController: UITableViewController {
 
    // }
     
-
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         guard let menuType = MenuType(rawValue:  indexPath.row) else { return }
         
-//        let numbers = [1, 2, 3, 4, 5]
-//
-//        let n = numbers[1]
-//          print("Inside profile switch case \(n)")
         dismiss(animated: true) { [weak self] in
             print("Dismissing: \(menuType)")
             switch menuType{
@@ -68,7 +63,11 @@ class MenuViewController: UITableViewController {
             default:
                 break;
             }
-            
+            let slide = SlideInTransition()
+            if slide.getDismissTap()
+            {
+                self?.dismiss(animated: true)
+            }
         }
     }
     

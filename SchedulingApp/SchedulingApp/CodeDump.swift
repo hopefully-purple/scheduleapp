@@ -11,6 +11,10 @@
 import Foundation
 
 
+
+//Bit of code taken from https://stackoverflow.com/questions/11553396/how-to-add-an-action-on-uitextfield-return-key
+//self.scheduleNameL.addTarget(self, action: #selector(onReturn), for: UIControl.Event.editingDidEndOnExit)
+/////////////////////
 //    let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.handleTap(_:)))
 //            tap.delegate = self
 //            self.view.addGestureRecognizer(tap)

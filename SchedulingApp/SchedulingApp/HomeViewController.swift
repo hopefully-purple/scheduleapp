@@ -22,7 +22,7 @@ import FSCalendar
  
  As of v0.1, this is named View Controller and the second view is named MainViewController. TODO: The naming needs to be fixed
  */
-class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDelegate {
+class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDelegate, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var calendar: FSCalendar!
     
@@ -43,10 +43,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
         super.viewDidLoad()
         
         calendar.delegate = self
-        
-        //Bit of code taken from https://stackoverflow.com/questions/11553396/how-to-add-an-action-on-uitextfield-return-key
-        //self.scheduleNameL.addTarget(self, action: #selector(onReturn), for: UIControl.Event.editingDidEndOnExit)
-        
+ 
         //TODO: Get appropriate inforamtion from the model to determine the correct placeholder name
        // scheduleNameL.placeholder = "My Schedule"
         
@@ -71,7 +68,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
     }
     
     /**
-     This is the action for the menu button, calls the MenuViewController forward, calls transitionToNew?
+     This is the action for the menu button, calls the MenuViewController forward, calls transitionToNew
      */
     @IBAction func didTabMenu(_ sender: UIBarButtonItem) {
         
@@ -84,10 +81,11 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
         menuViewController.modalPresentationStyle = .overCurrentContext
         menuViewController.transitioningDelegate = self
         present(menuViewController, animated: true)
-         
+
     }
     
     func transitionToNew(_ menuType: MenuType) {
+        
         //Change the HomeView title MAJOR Q:: DOES THIS BELONG HERE WITH MVC??
         var title = String(describing: menuType)
         print("Inside transition to new. switch title label")
@@ -117,6 +115,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
             guard let profileViewController = storyboard?.instantiateViewController(withIdentifier:
                 "ProfileSettingViewController") as? ProfileSettingViewController else { return }
             profileViewController.modalPresentationStyle = .popover
+            print("profile view animated true")
             present(profileViewController, animated: true)
         case .createNew:
             guard let addPViewController = storyboard?.instantiateViewController(withIdentifier:
@@ -127,18 +126,14 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
             print("Groups")
             //This might be where we reveal the Add button?
         default:
+           // present(HomeViewController, animated: true)
             break;
-//              let view = UIView()
-//            view.backgroundColor = .yellow
-//            view.frame = self.view.bounds
-//            self.view.addSubview(view)
-//            self.topView = view
         }
     
     }//the end of transitionToNew in case you are lost
     
    
-
+//
 
 
 
@@ -147,11 +142,13 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
 extension HomeViewController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.isPresenting = true
+        print("transition = true")
         return transition
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.isPresenting = false
+        print("transition = false")
         return transition
     }
 }
