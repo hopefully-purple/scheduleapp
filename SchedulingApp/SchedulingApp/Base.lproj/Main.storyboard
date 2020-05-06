@@ -268,17 +268,11 @@
                         <connections>
                             <outlet property="dataSource" destination="FZU-BY-gey" id="x2c-Uj-O2O"/>
                             <outlet property="delegate" destination="FZU-BY-gey" id="t2U-MZ-Pk8"/>
-                            <outletCollection property="gestureRecognizers" destination="Rwz-49-6rT" appends="YES" id="RUh-kf-Edj"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="coi-8c-ggy"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8a8-hQ-8sV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="Rwz-49-6rT">
-                    <connections>
-                        <action selector="tapGesture:" destination="FZU-BY-gey" id="5ng-av-XMm"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-2925" y="-2087"/>
         </scene>
