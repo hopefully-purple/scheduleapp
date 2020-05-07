@@ -10,6 +10,10 @@ import UIKit
 
 class AddPeopleViewController: UIViewController {
 
+//MARK: - Properties
+     var didTapMenuType: ((MenuType) -> Void)?
+    
+    //MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
 

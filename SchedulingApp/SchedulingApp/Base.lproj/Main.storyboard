@@ -16,11 +16,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cg-7g-Z8t">
-                                <rect key="frame" x="161" y="172" width="92" height="35"/>
+                                <rect key="frame" x="115.5" y="172" width="183" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                <state key="normal" title="  ADD" image="plus.circle" catalog="system">
+                                <state key="normal" title="  Add Friends" image="plus.circle" catalog="system">
                                     <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="addFriends:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hho-eg-fUF"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LdT-A3-ChJ" customClass="FSCalendar">
                                 <rect key="frame" x="20" y="227" width="374" height="396"/>

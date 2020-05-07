@@ -29,8 +29,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
     
     //MARK: - Properties
     let transition = SlideInTransition()
-    //optional view switch
-    var topView: UIView?
     
     //This is the textfield for the name of the schedule
     //@IBOutlet weak var scheduleNameL: UITextField!
@@ -72,6 +70,26 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
     }
     
     /**
+     This is the button for adding friends
+     */
+    @IBAction func addFriends(_ sender: UIButton) {
+//        guard let addPeopleViewController = storyboard?.instantiateViewController(withIdentifier:
+//                   "AddPeopleViewController") as? AddPeopleViewController else { return }
+//               addPeopleViewController.modalPresentationStyle = .popover
+//               present(addPeopleViewController, animated: true)
+        
+         guard let addPeopleViewController = storyboard?.instantiateViewController(withIdentifier:
+             "AddPeopleViewController") as? AddPeopleViewController else { return }
+         addPeopleViewController.didTapMenuType = { menuType in
+             self.transitionToNew(menuType)
+         }
+        
+         addPeopleViewController.modalPresentationStyle = .overCurrentContext
+         addPeopleViewController.transitioningDelegate = self
+         present(addPeopleViewController, animated: true)
+    }
+    
+    /**
      This is the action for the menu button, calls the MenuViewController forward, calls transitionToNew
      */
     @IBAction func didTabMenu(_ sender: UIBarButtonItem) {
@@ -81,7 +99,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
         menuViewController.didTapMenuType = { menuType in
             self.transitionToNew(menuType)
         }
-        print("Inside didTabMenu")
+       
         menuViewController.modalPresentationStyle = .overCurrentContext
         menuViewController.transitioningDelegate = self
         present(menuViewController, animated: true)
@@ -94,7 +112,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
         
         //Change the HomeView title MAJOR Q:: DOES THIS BELONG HERE WITH MVC??
         var title = String(describing: menuType)
-        print("Inside transition to new. switch title label")
+        //print("Inside transition to new. switch title label")
         switch title{
         case "profile":
             break; //We don't want the current schedule to change!
@@ -112,16 +130,15 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
         default:
             break;
         }
-       
-        //topView?.removeFromSuperview() //part of the change the view color code
-        print("inside transition to new, swithc menutype")
+
+        //print("inside transition to new, swithc menutype")
         //Action to perform depending on which menuType was tapped
         switch menuType {
         case .profile:
             guard let profileViewController = storyboard?.instantiateViewController(withIdentifier:
                 "ProfileSettingViewController") as? ProfileSettingViewController else { return }
             profileViewController.modalPresentationStyle = .popover
-            print("profile view animated true")
+            //print("profile view animated true")
             present(profileViewController, animated: true)
         case .createNew:
             guard let addPViewController = storyboard?.instantiateViewController(withIdentifier:
@@ -132,7 +149,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
             print("Groups")
             //This might be where we reveal the Add button?
         default:
-           print("DEFAULT IN HOME")
+           //print("DEFAULT IN HOME")
             break;
         }
     
@@ -148,13 +165,13 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
 extension HomeViewController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.isPresenting = true
-        print("transition = true")
+        //print("transition = true")
         return transition
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.isPresenting = false
-        print("transition = false")
+        //print("transition = false")
         return transition
     }
 }

@@ -44,7 +44,7 @@ class SlideInTransition: NSObject, UIViewControllerAnimatedTransitioning {
         //0.8 makes it slid 80% across
         let finalWidth = toViewController.view.bounds.width * 0.8
         let finalHeight = toViewController.view.bounds.height
-        print("Inside SlideInTransition->animateTransition->before if isPresenting")
+        //print("Inside SlideInTransition->animateTransition->before if isPresenting")
         if isPresenting {
             //Add dimming view
             dimmingView.translatesAutoresizingMaskIntoConstraints = false
