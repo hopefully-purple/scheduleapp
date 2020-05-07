@@ -15,41 +15,25 @@ enum MenuType: Int {
     case groupSchedule
     case createNew
     case settings
-    case back 
+    case back
 
 }
 
 /**
 The menu
  */
-class MenuViewController: UITableViewController, UIGestureRecognizerDelegate {
+class MenuViewController: UITableViewController {
 
     var didTapMenuType: ((MenuType) -> Void)?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    //@IBAction func tapGesture(_ sender: UITapGestureRecognizer) {
-       // guard sender.view != nil else { return }
 
-
-        //if didTap x> 80% then dismiss view
-        //x = 331.0 -> that's the 80% I do believe
-        //var range = toViewController.view.bounds.width * 0.8
-
-       // print(sender.location(in: sender.view).x)
-
-        //sender.location(in: sender.view).self)
-
-
-   // }
-    
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+
         guard let menuType = MenuType(rawValue:  indexPath.row) else { return }
-        
+
         dismiss(animated: true) { [weak self] in
             print("Dismissing: \(menuType)")
             switch menuType{
@@ -63,14 +47,10 @@ class MenuViewController: UITableViewController, UIGestureRecognizerDelegate {
                 self?.didTapMenuType?(menuType)
                 //Here might be where I want to create a new schedule under groups. Tricky part is, internet is saying that has to do with Model
             default:
+                print("DEFAULT IN MENU")
                 break;
-            }
-            let slide = SlideInTransition()
-            if slide.getDismissTap()
-            {
-                self?.dismiss(animated: true)
             }
         }
     }
-    
+
 }

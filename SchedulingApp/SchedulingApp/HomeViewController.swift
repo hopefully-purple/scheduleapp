@@ -24,8 +24,10 @@ import FSCalendar
  */
 class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDelegate, UIGestureRecognizerDelegate {
     
+    //MARK: - IBOutlets
     @IBOutlet weak var calendar: FSCalendar!
     
+    //MARK: - Properties
     let transition = SlideInTransition()
     //optional view switch
     var topView: UIView?
@@ -33,6 +35,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
     //This is the textfield for the name of the schedule
     //@IBOutlet weak var scheduleNameL: UITextField!
     
+    
+    //MARK: - Functions
     /**
      This is the viewDidLoad function for the Main View
      
@@ -84,6 +88,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
 
     }
     
+    //MARK: - Animation
+    
     func transitionToNew(_ menuType: MenuType) {
         
         //Change the HomeView title MAJOR Q:: DOES THIS BELONG HERE WITH MVC??
@@ -126,7 +132,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
             print("Groups")
             //This might be where we reveal the Add button?
         default:
-           // present(HomeViewController, animated: true)
+           print("DEFAULT IN HOME")
             break;
         }
     
