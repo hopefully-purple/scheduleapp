@@ -102,7 +102,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
         controller.transitioningDelegate = slideInTransitioningDelegate
         
         //Set the presenation style to custom
-        controller.modalPresentationStyle = .custom'
+        controller.modalPresentationStyle = .custom
         
       } else if let controller = segue.destination as? AddPeopleViewController {
 
@@ -191,3 +191,17 @@ extension HomeViewController: MenuViewControllerDelegate {
     dismiss(animated: true)
   }
 }
+
+//extension HomeViewController: UIViewControllerTransitioningDelegate {
+//    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        transition.isPresenting = true
+//        print("transition = true")
+//        return transition
+//    }
+//
+//    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        transition.isPresenting = false
+//        print("transition = false")
+//        return transition
+//    }
+//}

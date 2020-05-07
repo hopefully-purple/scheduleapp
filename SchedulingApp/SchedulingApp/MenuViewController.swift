@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  MenuViewController.swift
 //  SchedulingApp
 //
 //  Created by Hope Welch on 3/25/20.
@@ -7,23 +7,36 @@
 //
 
 //import Foundation
-import UIKit 
+import UIKit
+
+//enum MenuType: Int {
+//    case profile
+//    case mySchedule
+//    case groupSchedule
+//    case createNew
+//    case settings
+//}
+
+protocol MenuViewControllerDelegate: AnyObject {
+  func menuViewController(controller: MenuViewController)
+}
 
 enum MenuType: Int {
     case profile
-    case mySchedule
-    case groupSchedule
-    case createNew
-    case settings
 }
+
+
+
 /**
 The menu
  */
-class MenuViewController: UITableViewController, UIGestureRecognizerDelegate {
+class MenuViewController: UITableViewController {
 
     //MARK: - Properties
-
+    weak var delegate: MenuViewControllerDelegate?
+    
     var didTapMenuType: ((MenuType) -> Void)?
+
 
     //MARK: - Functions
     override func viewDidLoad() {
