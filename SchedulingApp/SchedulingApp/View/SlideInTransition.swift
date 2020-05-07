@@ -18,9 +18,9 @@ import UIKit
 class SlideInTransition: NSObject, UIViewControllerAnimatedTransitioning {
 
     var isPresenting = false
-    var dismissTap = false
+
     let dimmingView = UIView()
-    //let presentingViewController = UIViewController?
+    
     /**
      Frame rate for the slide transition
      */
@@ -28,16 +28,11 @@ class SlideInTransition: NSObject, UIViewControllerAnimatedTransitioning {
         return 0.3
     }
     
-    @objc func handleTap(recognizer: UITapGestureRecognizer) {
-       // presentingViewController.dismiss(animated: true)
-        print("HANDLETAP SLIDE")
-        dismissTap = true
-    }
-    
-    func getDismissTap() -> Bool
-    {
-        return dismissTap
-    }
+//    @objc func handleTap(recognizer: UITapGestureRecognizer) {
+//       // presentingViewController.dismiss(animated: true)
+//        print("HANDLETAP SLIDE")
+//
+//    }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         
@@ -57,10 +52,10 @@ class SlideInTransition: NSObject, UIViewControllerAnimatedTransitioning {
             dimmingView.alpha = 0.0
             containerView.addSubview(dimmingView)
             dimmingView.frame = containerView.bounds
-            print("About to declare tap recognizer in SLide")
-            let recognizer = UITapGestureRecognizer(target: self,
-                                                    action: #selector(handleTap(recognizer:)))
-            dimmingView.addGestureRecognizer(recognizer)
+//            print("About to declare tap recognizer in SLide")
+//            let recognizer = UITapGestureRecognizer(target: self,
+//                                                    action: #selector(handleTap(recognizer:)))
+//            dimmingView.addGestureRecognizer(recognizer)
             
             //Add menu view controller to container
             containerView.addSubview(toViewController.view)
@@ -94,3 +89,21 @@ class SlideInTransition: NSObject, UIViewControllerAnimatedTransitioning {
     }
     
 }
+
+// MARK: - Private
+//private extension SlideInTransition {
+//  func setupDimmingView() {
+//    dimmingView = UIView()
+//    dimmingView.translatesAutoresizingMaskIntoConstraints = false
+//    dimmingView.backgroundColor = UIColor(white: 0.0, alpha: 0.5)
+//    dimmingView.alpha = 0.0
+//    
+//    let recognizer = UITapGestureRecognizer(target: self,
+//                                            action: #selector(handleTap(recognizer:)))
+//    dimmingView.addGestureRecognizer(recognizer)
+//  }
+//  
+//  @objc func handleTap(recognizer: UITapGestureRecognizer) {
+//    presentingViewController.dismiss(animated: true)
+//  }
+//}
