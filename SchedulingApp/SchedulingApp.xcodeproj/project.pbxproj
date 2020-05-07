@@ -12,10 +12,13 @@
 		2E3B643E243E6B58000ADD0C /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3B643D243E6B58000ADD0C /* Profile.swift */; };
 		2E3B6440243E7058000ADD0C /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3B643F243E7058000ADD0C /* Schedule.swift */; };
 		2E416FFC246355690083A650 /* CodeDump.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E416FFB246355690083A650 /* CodeDump.swift */; };
+		2E417000246387270083A650 /* SlideInPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E416FFF246387270083A650 /* SlideInPresentationManager.swift */; };
+		2E417002246390000083A650 /* SlideInPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E417001246390000083A650 /* SlideInPresentationController.swift */; };
+		2E4170042463965E0083A650 /* SlideInPresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4170032463965E0083A650 /* SlideInPresentationAnimator.swift */; };
+		2E41700624639A670083A650 /* MenuTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E41700524639A670083A650 /* MenuTable.swift */; };
 		2E4A7161243E38560002DECF /* AddPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4A7160243E38560002DECF /* AddPeopleViewController.swift */; };
 		2E7CCD5C243AA0D800BB211D /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CCD5B243AA0D800BB211D /* FilterViewController.swift */; };
 		2E7CCD5E243AA20900BB211D /* ProfileSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CCD5D243AA20900BB211D /* ProfileSettingViewController.swift */; };
-		2E7CCD60243BC32E00BB211D /* SlideInTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CCD5F243BC32E00BB211D /* SlideInTransition.swift */; };
 		6E407429242BA2E10024923B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E407428242BA2E10024923B /* AppDelegate.swift */; };
 		6E40742B242BA2E10024923B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40742A242BA2E10024923B /* SceneDelegate.swift */; };
 		6E40742D242BA2E10024923B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40742C242BA2E10024923B /* HomeViewController.swift */; };
@@ -51,10 +54,13 @@
 		2E3B643D243E6B58000ADD0C /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		2E3B643F243E7058000ADD0C /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		2E416FFB246355690083A650 /* CodeDump.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDump.swift; sourceTree = "<group>"; };
+		2E416FFF246387270083A650 /* SlideInPresentationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInPresentationManager.swift; sourceTree = "<group>"; };
+		2E417001246390000083A650 /* SlideInPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInPresentationController.swift; sourceTree = "<group>"; };
+		2E4170032463965E0083A650 /* SlideInPresentationAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInPresentationAnimator.swift; sourceTree = "<group>"; };
+		2E41700524639A670083A650 /* MenuTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTable.swift; sourceTree = "<group>"; };
 		2E4A7160243E38560002DECF /* AddPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPeopleViewController.swift; sourceTree = "<group>"; };
 		2E7CCD5B243AA0D800BB211D /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		2E7CCD5D243AA20900BB211D /* ProfileSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewController.swift; sourceTree = "<group>"; };
-		2E7CCD5F243BC32E00BB211D /* SlideInTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInTransition.swift; sourceTree = "<group>"; };
 		431F26CF1CC44103CF900E7D /* Pods_SchedulingApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SchedulingApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		502F00C15FF3240C616DC77D /* Pods_SchedulingAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SchedulingAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E407425242BA2E10024923B /* SchedulingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchedulingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +118,7 @@
 			children = (
 				2E3B643D243E6B58000ADD0C /* Profile.swift */,
 				2E3B643F243E7058000ADD0C /* Schedule.swift */,
+				2E41700524639A670083A650 /* MenuTable.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -119,9 +126,18 @@
 		2E3B643B243E6919000ADD0C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2E7CCD5F243BC32E00BB211D /* SlideInTransition.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		2E416FFE246386880083A650 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				2E417001246390000083A650 /* SlideInPresentationController.swift */,
+				2E416FFF246387270083A650 /* SlideInPresentationManager.swift */,
+				2E4170032463965E0083A650 /* SlideInPresentationAnimator.swift */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		6E40741C242BA2E10024923B = {
@@ -151,6 +167,7 @@
 			children = (
 				6E407428242BA2E10024923B /* AppDelegate.swift */,
 				6E40742A242BA2E10024923B /* SceneDelegate.swift */,
+				2E416FFE246386880083A650 /* Presentation */,
 				2E3B643A243E68F6000ADD0C /* Model */,
 				2E3B643B243E6919000ADD0C /* View */,
 				6E40742C242BA2E10024923B /* HomeViewController.swift */,
@@ -448,15 +465,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E40742D242BA2E10024923B /* HomeViewController.swift in Sources */,
+				2E4170042463965E0083A650 /* SlideInPresentationAnimator.swift in Sources */,
 				6E407429242BA2E10024923B /* AppDelegate.swift in Sources */,
 				2E416FFC246355690083A650 /* CodeDump.swift in Sources */,
 				6E40742B242BA2E10024923B /* SceneDelegate.swift in Sources */,
 				2E140872242BB35C0090953D /* MenuViewController.swift in Sources */,
-				2E7CCD60243BC32E00BB211D /* SlideInTransition.swift in Sources */,
 				2E4A7161243E38560002DECF /* AddPeopleViewController.swift in Sources */,
 				2E7CCD5C243AA0D800BB211D /* FilterViewController.swift in Sources */,
 				2E3B643E243E6B58000ADD0C /* Profile.swift in Sources */,
+				2E41700624639A670083A650 /* MenuTable.swift in Sources */,
+				2E417000246387270083A650 /* SlideInPresentationManager.swift in Sources */,
 				2E3B6440243E7058000ADD0C /* Schedule.swift in Sources */,
+				2E417002246390000083A650 /* SlideInPresentationController.swift in Sources */,
 				2E7CCD5E243AA20900BB211D /* ProfileSettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

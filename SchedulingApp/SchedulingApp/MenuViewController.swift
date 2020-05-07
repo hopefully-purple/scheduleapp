@@ -6,8 +6,11 @@
 //  Copyright © 2020 PWGTC. All rights reserved.
 //
 
-//import Foundation   
 import UIKit
+
+protocol MenuViewControllerDelegate: AnyObject {
+  func menuViewController(controller: MenuViewController, didSelectGames selectedGames: MenuTable)
+}
 
 enum MenuType: Int {
     case profile
@@ -17,31 +20,63 @@ enum MenuType: Int {
     case settings
 }
 
+final class MenuViewController: UITableViewController {
+  // MARK: - Properties
+  weak var delegate: MenuTableViewControllerDelegate?
+  var gamesArray: [Games]!
+}
+
+// MARK: - UITableViewDataSource
+extension MenuViewController {
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return gamesArray.count
+  }
+  
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "GamesCell", for: indexPath) as! GamesTableViewCell
+
+    let games = gamesArray[indexPath.row]
+    cell.hostLabel.text = games.host
+    cell.yearLabel.text = games.year
+    cell.logoImageView.image = UIImage(named: games.flagImageName)
+
+    return cell
+  }
+}
+
+// MARK: - UITableViewDelegate
+extension MenuViewController {
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
+    let selectedGames = gamesArray[indexPath.row]
+    delegate?.gamesTableViewController(controller: self, didSelectGames: selectedGames)
+  }
+}
+
+//import Foundation
+import UIKit
+
+
+
+protocol MenuViewControllerDelegate: AnyObject {
+  func menuViewController(controller: MenuViewController)
+}
 /**
 The menu
  */
 class MenuViewController: UITableViewController, UIGestureRecognizerDelegate {
 
+    
+    //MARK: - Properties
+    
+    //weak var delegate: MenuViewControllerDelegate?
+    
     var didTapMenuType: ((MenuType) -> Void)?
     
+    //MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    //@IBAction func tapGesture(_ sender: UITapGestureRecognizer) {
-       // guard sender.view != nil else { return }
-
-
-        //if didTap x> 80% then dismiss view
-        //x = 331.0 -> that's the 80% I do believe
-        //var range = toViewController.view.bounds.width * 0.8
-
-       // print(sender.location(in: sender.view).x)
-
-        //sender.location(in: sender.view).self)
-
-
-   // }
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -63,11 +98,7 @@ class MenuViewController: UITableViewController, UIGestureRecognizerDelegate {
             default:
                 break;
             }
-            let slide = SlideInTransition()
-            if slide.getDismissTap()
-            {
-                self?.dismiss(animated: true)
-            }
+ 
         }
     }
     

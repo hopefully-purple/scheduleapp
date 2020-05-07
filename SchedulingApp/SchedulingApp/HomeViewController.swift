@@ -24,31 +24,36 @@ import FSCalendar
  */
 class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDelegate, UIGestureRecognizerDelegate {
     
+    // MARK: - IBOutlets
     @IBOutlet weak var calendar: FSCalendar!
-    
-    let transition = SlideInTransition()
-    //optional view switch
-    var topView: UIView?
-    
     //This is the textfield for the name of the schedule
     //@IBOutlet weak var scheduleNameL: UITextField!
     
-    /**
-     This is the viewDidLoad function for the Main View
-     
-     A bit of code sets up the return key functionality
-     Set the scheduleNameL placeholder text to the appropriate text
-     */
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        calendar.delegate = self
- 
-        //TODO: Get appropriate inforamtion from the model to determine the correct placeholder name
-       // scheduleNameL.placeholder = "My Schedule"
-        
-    }
+    // MARK: - Properties
     
+    /**
+        transitioningDelegate is a weak property, so you must keep a strong reference to the delegate somewhere.
+        You don't want to keep this reference on the presented controller itself as you might want to reuse it on different presentation styles.
+     */
+    lazy var slideInTransitioningDelegate = SlideInPresentationManager()
+
+    //MARK: - Functions
+    
+       /**
+        This is the viewDidLoad function for the Main View
+        
+        A bit of code sets up the return key functionality
+        Set the scheduleNameL placeholder text to the appropriate text
+        */
+       override func viewDidLoad() {
+           super.viewDidLoad()
+           
+           calendar.delegate = self
+    
+           //TODO: Get appropriate inforamtion from the model to determine the correct placeholder name
+          // scheduleNameL.placeholder = "My Schedule"
+           
+       }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         let formatter = DateFormatter()
@@ -58,15 +63,61 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
     }
     
     /**
-     This is the action for the filter button
-     */
-    @IBAction func didFilters(_ sender: UIBarButtonItem) {
-        guard let filterViewController = storyboard?.instantiateViewController(withIdentifier:
-            "FilterViewController") as? FilterViewController else { return }
-        filterViewController.modalPresentationStyle = .popover
-        present(filterViewController, animated: true)
-    }
+      This is the action for the filter button
+      */
+     @IBAction func didFilters(_ sender: UIBarButtonItem) {
+         guard let filterViewController = storyboard?.instantiateViewController(withIdentifier:
+             "FilterViewController") as? FilterViewController else { return }
+         filterViewController.modalPresentationStyle = .popover
+         present(filterViewController, animated: true)
+     }
     
+    //MARK: - Animation
+    
+    /**
+     This method is taken from the raywenderlich.com UIPresentation Controller Tutorial, and edited by Hope Welch
+     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      
+    if let controller = segue.destination as? MenuViewController {
+        
+        //Set the presentation direction of the Menu to be left
+        slideInTransitioningDelegate.direction = .left
+        
+        //TODO: HEELLLLPPPP!!! not sure if need
+        //controller.delegate = self
+
+        //The MenuViewController's transitioning delegate is now the slideInTransitioningDelegate declared earlier
+        controller.transitioningDelegate = slideInTransitioningDelegate
+
+        //The modalPresentationStyle is custom
+        controller.modalPresentationStyle = .custom
+        
+      } else if let controller = segue.destination as? FilterViewController {
+
+        //Set the presentation direction to be right
+        slideInTransitioningDelegate.direction = .right
+        
+        //Set the delegate to the slide delegate
+        controller.transitioningDelegate = slideInTransitioningDelegate
+        
+        //Set the presenation style to custom
+        controller.modalPresentationStyle = .custom'
+        
+      } else if let controller = segue.destination as? AddPeopleViewController {
+
+        //Set the presentation direction to be bottom
+        slideInTransitioningDelegate.direction = .bottom
+        
+        //Set the delegate to the slide delegate
+        controller.transitioningDelegate = slideInTransitioningDelegate
+        
+        //Set the presenation style to custom
+        controller.modalPresentationStyle = .custom
+      }
+        
+    }
+ 
     /**
      This is the action for the menu button, calls the MenuViewController forward, calls transitionToNew
      */
@@ -79,7 +130,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
         }
         print("Inside didTabMenu")
         menuViewController.modalPresentationStyle = .overCurrentContext
-        menuViewController.transitioningDelegate = self
+        //menuViewController.transitioningDelegate = self
         present(menuViewController, animated: true)
 
     }
@@ -131,24 +182,12 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
         }
     
     }//the end of transitionToNew in case you are lost
-    
-   
-//
-
-
 
 }//end of class
 
-extension HomeViewController: UIViewControllerTransitioningDelegate {
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        transition.isPresenting = true
-        print("transition = true")
-        return transition
-    }
-    
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        transition.isPresenting = false
-        print("transition = false")
-        return transition
-    }
+// MARK: - MenuViewControllerDelegate
+extension HomeViewController: MenuViewControllerDelegate {
+  func menuViewController(controller: MenuViewController) {
+    dismiss(animated: true)
+  }
 }
