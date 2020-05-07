@@ -15,6 +15,8 @@ enum MenuType: Int {
     case groupSchedule
     case createNew
     case settings
+    case back 
+
 }
 
 /**
