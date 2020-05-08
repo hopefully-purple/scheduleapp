@@ -30,6 +30,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
     //MARK: - Properties
     let transitionR = SlideInTransitionRight()
     let transitionU = SlideInTransitionUp()
+    let transitionL = SlideInTransitionLeft()
     
     //This is the textfield for the name of the schedule
     //@IBOutlet weak var scheduleNameL: UITextField!
@@ -64,10 +65,21 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
      This is the action for the filter button
      */
     @IBAction func didFilters(_ sender: UIBarButtonItem) {
-        guard let filterViewController = storyboard?.instantiateViewController(withIdentifier:
-            "FilterViewController") as? FilterViewController else { return }
-        filterViewController.modalPresentationStyle = .popover
-        present(filterViewController, animated: true)
+//        guard let filterViewController = storyboard?.instantiateViewController(withIdentifier:
+//            "FilterViewController") as? FilterViewController else { return }
+//        filterViewController.modalPresentationStyle = .popover
+//        present(filterViewController, animated: true)
+        
+        //print("in addFriends function in Home1")
+         guard let filterViewController = storyboard?.instantiateViewController(withIdentifier:
+             "FilterViewController") as? FilterViewController else { return }
+         //addPeopleViewController.tempMethod() = { menuType in
+             //self.transitionToNewU()
+         //}
+        //print("in addFriends function in Home2")
+         filterViewController.modalPresentationStyle = .overCurrentContext
+         filterViewController.transitioningDelegate = self
+         present(filterViewController, animated: true)
     }
     
     /**
@@ -182,9 +194,13 @@ extension HomeViewController: UIViewControllerTransitioningDelegate {
         } else if className.contains("AddPeopleViewController")
         {
             transitionU.isPresenting = true
+            return transitionU
+        } else if className.contains("FilterViewController")
+        {
+            transitionL.isPresenting = true
         }
         
-        return transitionU
+        return transitionL
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
@@ -196,9 +212,13 @@ extension HomeViewController: UIViewControllerTransitioningDelegate {
         } else if className.contains("AddPeopleViewController")
         {
             transitionU.isPresenting = false
+            return transitionU
+        } else if className.contains("FilterViewController")
+        {
+            transitionL.isPresenting = false
         }
-        
-        return transitionU
+            
+        return transitionL
     }
 }
 ////MARK: - Transition Up
