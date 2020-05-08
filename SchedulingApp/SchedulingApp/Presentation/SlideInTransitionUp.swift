@@ -26,11 +26,11 @@ class SlideInTransitionUp: NSObject, UIViewControllerAnimatedTransitioning {
         return 0.3
     }
     
-//    @objc func handleTap(recognizer: UITapGestureRecognizer) {
-//       // presentingViewController.dismiss(animated: true)
-//        print("HANDLETAP SLIDE")
-//
-//    }
+    @objc func handleTap(recognizer: UITapGestureRecognizer) {
+       // presentingViewController.dismiss(animated: true)
+        print("HANDLETAP SLIDE")
+
+    }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         
@@ -39,9 +39,10 @@ class SlideInTransitionUp: NSObject, UIViewControllerAnimatedTransitioning {
        
         let containerView = transitionContext.containerView
         print("UUUUUPPPPP")
-        //0.3 makes it slid 30% across
+        //0.7 makes it slid 70% across
         let finalWidth = toViewController.view.bounds.width
-        let finalHeight = toViewController.view.bounds.height * 0.3
+        let finalHeight = toViewController.view.bounds.height * 0.7
+        let regHeight = toViewController.view.bounds.height
         //print("Inside SlideInTransition->animateTransition->before if isPresenting")
         if isPresenting {
             //Add dimming view
@@ -51,22 +52,22 @@ class SlideInTransitionUp: NSObject, UIViewControllerAnimatedTransitioning {
             containerView.addSubview(dimmingView)
             dimmingView.frame = containerView.bounds
 //            print("About to declare tap recognizer in SLide")
-//            let recognizer = UITapGestureRecognizer(target: self,
-//                                                    action: #selector(handleTap(recognizer:)))
-//            dimmingView.addGestureRecognizer(recognizer)
+            let recognizer = UITapGestureRecognizer(target: self,
+                                                    action: #selector(handleTap(recognizer:)))
+            dimmingView.addGestureRecognizer(recognizer)
             
             //Add menu view controller to container
             containerView.addSubview(toViewController.view)
             
             //Initial frame off the screen
-            toViewController.view.frame =  CGRect(x: -finalWidth, y: 0, width: finalWidth, height: finalHeight)
+            toViewController.view.frame =  CGRect(x: 0, y: regHeight, width: finalWidth, height: finalHeight)
         }
 
 
         //Animate on screen
         let transform = {
             self.dimmingView.alpha = 0.5
-            toViewController.view.transform = CGAffineTransform(translationX: finalWidth, y: 0)
+            toViewController.view.transform = CGAffineTransform(translationX: 0, y: -finalHeight)
         }
         
         //Animate back off screen
