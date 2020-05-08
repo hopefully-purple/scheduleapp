@@ -41,6 +41,10 @@ class AddPeopleViewController: UIViewController {
         textField1.text = "Choose One"
     }
 
+    @IBAction func dismissButton(_ sender: UIButton) {
+        
+        dismiss(animated: true)
+    }
     
     @IBAction func proximity(_ sender: UIButton) {
         textField1.text = "Searching for nearby friendos . . ."

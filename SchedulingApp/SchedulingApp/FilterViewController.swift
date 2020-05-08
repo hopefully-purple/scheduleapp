@@ -17,6 +17,10 @@ class FilterViewController: UIViewController {
     }
     
 
+    @IBAction func dismissButton(_ sender: UIButton) {
+        
+        dismiss(animated: true)
+    }
     /*
     // MARK: - Navigation
 
