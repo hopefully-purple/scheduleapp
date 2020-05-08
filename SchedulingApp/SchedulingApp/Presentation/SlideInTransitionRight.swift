@@ -20,7 +20,7 @@ class SlideInTransitionRight: NSObject, UIViewControllerAnimatedTransitioning {
     var isPresenting = false
 
     let dimmingView = UIView()
-    
+    var dismissingView = UIViewController()
     /**
      Frame rate for the slide transition
      */
@@ -28,19 +28,20 @@ class SlideInTransitionRight: NSObject, UIViewControllerAnimatedTransitioning {
         return 0.3
     }
     
-//    @objc func handleTap(recognizer: UITapGestureRecognizer) {
-//       // presentingViewController.dismiss(animated: true)
-//        print("HANDLETAP SLIDE")
-//
-//    }
+@objc func handleTap(recognizer: UITapGestureRecognizer) {
+   // presentingViewController.dismiss(animated: true)
+    print("HANDLETAP SLIDE")
+    //dismiss(animated: true)
+    dismissingView.dismiss(animated: true)
+
+}
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         
         guard let toViewController = transitionContext.viewController(forKey: .to),
             let fromViewController = transitionContext.viewController(forKey: .from) else { return }
        
-        print(toViewController)
-        
+          dismissingView = fromViewController
         let containerView = transitionContext.containerView
         print("RIIIIGHGHGHGT")
         //0.8 makes it slid 80% across
@@ -55,9 +56,9 @@ class SlideInTransitionRight: NSObject, UIViewControllerAnimatedTransitioning {
             containerView.addSubview(dimmingView)
             dimmingView.frame = containerView.bounds
 //            print("About to declare tap recognizer in SLide")
-//            let recognizer = UITapGestureRecognizer(target: self,
-//                                                    action: #selector(handleTap(recognizer:)))
-//            dimmingView.addGestureRecognizer(recognizer)
+            let recognizer = UITapGestureRecognizer(target: self,
+                                                    action: #selector(handleTap(recognizer:)))
+            dimmingView.addGestureRecognizer(recognizer)
             
             //Add menu view controller to container
             containerView.addSubview(toViewController.view)

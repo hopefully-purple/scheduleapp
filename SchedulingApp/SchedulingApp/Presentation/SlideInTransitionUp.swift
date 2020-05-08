@@ -18,6 +18,7 @@ class SlideInTransitionUp: NSObject, UIViewControllerAnimatedTransitioning {
     var isPresenting = false
 
     let dimmingView = UIView()
+    var dismissingView = UIViewController()
     
     /**
      Frame rate for the slide transition
@@ -29,6 +30,8 @@ class SlideInTransitionUp: NSObject, UIViewControllerAnimatedTransitioning {
     @objc func handleTap(recognizer: UITapGestureRecognizer) {
        // presentingViewController.dismiss(animated: true)
         print("HANDLETAP SLIDE")
+        //dismiss(animated: true)
+        dismissingView.dismiss(animated: true)
 
     }
     
@@ -36,7 +39,7 @@ class SlideInTransitionUp: NSObject, UIViewControllerAnimatedTransitioning {
         
         guard let toViewController = transitionContext.viewController(forKey: .to),
             let fromViewController = transitionContext.viewController(forKey: .from) else { return }
-       
+        dismissingView = fromViewController
         let containerView = transitionContext.containerView
         print("UUUUUPPPPP")
         //0.7 makes it slid 70% across

@@ -37,10 +37,18 @@ class AddPeopleViewController: UIViewController {
     //MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //let recognizer = UITapGestureRecognizer(target: self,
+                                                //action: #selector(handleTap(recognizer:)))
         textField1.text = "Choose One"
     }
 
+//    @objc func handleTap(recognizer: UITapGestureRecognizer) {
+//        // presentingViewController.dismiss(animated: true)
+//         print("ADDPEOPLEHANDLETAP SLIDE")
+//         //dismiss(animated: true)
+//
+//     }
+    
     @IBAction func dismissButton(_ sender: UIButton) {
         
         dismiss(animated: true)
