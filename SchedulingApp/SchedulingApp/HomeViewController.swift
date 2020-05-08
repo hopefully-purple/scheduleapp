@@ -28,7 +28,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
     @IBOutlet weak var calendar: FSCalendar!
     
     //MARK: - Properties
-    let transition = SlideInTransition()
+    let transitionR = SlideInTransitionRight()
+    let transitionU = SlideInTransitionUp()
     
     //This is the textfield for the name of the schedule
     //@IBOutlet weak var scheduleNameL: UITextField!
@@ -81,7 +82,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
          guard let addPeopleViewController = storyboard?.instantiateViewController(withIdentifier:
              "AddPeopleViewController") as? AddPeopleViewController else { return }
          addPeopleViewController.didTapMenuType = { menuType in
-             self.transitionToNew(menuType)
+             self.transitionToNewU()
          }
         
          addPeopleViewController.modalPresentationStyle = .overCurrentContext
@@ -97,7 +98,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
         guard let menuViewController = storyboard?.instantiateViewController(withIdentifier:
             "MenuViewController") as? MenuViewController else { return }
         menuViewController.didTapMenuType = { menuType in
-            self.transitionToNew(menuType)
+            self.transitionToNewR(menuType)
         }
        
         menuViewController.modalPresentationStyle = .overCurrentContext
@@ -108,7 +109,13 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
     
     //MARK: - Animation
     
-    func transitionToNew(_ menuType: MenuType) {
+    func transitionToNewU()
+    {
+        print("newU")
+        
+    }
+    
+    func transitionToNewR(_ menuType: MenuType) {
         
         //Change the HomeView title MAJOR Q:: DOES THIS BELONG HERE WITH MVC??
         var title = String(describing: menuType)
@@ -161,17 +168,31 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
 
 
 }//end of class
-
+//MARK: - Transition Right
 extension HomeViewController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        transition.isPresenting = true
-        //print("transition = true")
-        return transition
+        transitionR.isPresenting = true
+        
+        return transitionR
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        transition.isPresenting = false
+        transitionR.isPresenting = false
         //print("transition = false")
-        return transition
+        return transitionR
     }
 }
+////MARK: - Transition Up
+//extension HomeViewController: UIViewControllerTransitioningDelegate {
+//    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        transitionU.isPresenting = true
+//        //print("transition = true")
+//        return transitionU
+//    }
+//
+//    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        transitionU.isPresenting = false
+//        //print("transition = false")
+//        return transitionU
+//    }
+//}

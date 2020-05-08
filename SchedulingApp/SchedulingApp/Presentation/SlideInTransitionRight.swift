@@ -15,7 +15,7 @@
 
 import UIKit
 
-class SlideInTransition: NSObject, UIViewControllerAnimatedTransitioning {
+class SlideInTransitionRight: NSObject, UIViewControllerAnimatedTransitioning {
 
     var isPresenting = false
 
@@ -39,8 +39,10 @@ class SlideInTransition: NSObject, UIViewControllerAnimatedTransitioning {
         guard let toViewController = transitionContext.viewController(forKey: .to),
             let fromViewController = transitionContext.viewController(forKey: .from) else { return }
        
-        let containerView = transitionContext.containerView
+        print(toViewController)
         
+        let containerView = transitionContext.containerView
+        print("RIIIIGHGHGHGT")
         //0.8 makes it slid 80% across
         let finalWidth = toViewController.view.bounds.width * 0.8
         let finalHeight = toViewController.view.bounds.height
