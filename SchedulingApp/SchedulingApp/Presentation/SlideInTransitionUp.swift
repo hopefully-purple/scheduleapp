@@ -28,25 +28,23 @@ class SlideInTransitionUp: NSObject, UIViewControllerAnimatedTransitioning {
     }
     
     @objc func handleTap(recognizer: UITapGestureRecognizer) {
-       // presentingViewController.dismiss(animated: true)
-        print("HANDLETAP SLIDE")
-        //dismiss(animated: true)
-        dismissingView.dismiss(animated: true)
 
+        dismissingView.dismiss(animated: true)
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         
         guard let toViewController = transitionContext.viewController(forKey: .to),
             let fromViewController = transitionContext.viewController(forKey: .from) else { return }
+        
         dismissingView = fromViewController
         let containerView = transitionContext.containerView
-        print("UUUUUPPPPP")
+
         //0.7 makes it slid 70% across
         let finalWidth = toViewController.view.bounds.width
         let finalHeight = toViewController.view.bounds.height * 0.7
         let regHeight = toViewController.view.bounds.height
-        //print("Inside SlideInTransition->animateTransition->before if isPresenting")
+       
         if isPresenting {
             //Add dimming view
             dimmingView.translatesAutoresizingMaskIntoConstraints = false
@@ -54,7 +52,7 @@ class SlideInTransitionUp: NSObject, UIViewControllerAnimatedTransitioning {
             dimmingView.alpha = 0.0
             containerView.addSubview(dimmingView)
             dimmingView.frame = containerView.bounds
-//            print("About to declare tap recognizer in SLide")
+
             let recognizer = UITapGestureRecognizer(target: self,
                                                     action: #selector(handleTap(recognizer:)))
             dimmingView.addGestureRecognizer(recognizer)

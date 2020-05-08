@@ -23,8 +23,6 @@ import UIKit
     //b) allow multiple people to be selected
     //Create a new group schedule
 
-//4) I WANT TO BE ABLE TO SWIPE THIS VIEW AWAY!!!
-//5) I WANT IT TO ANIMATED FROM BOTTOM TO 1/3
 
 class AddPeopleViewController: UIViewController {
 
@@ -37,17 +35,9 @@ class AddPeopleViewController: UIViewController {
     //MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        //let recognizer = UITapGestureRecognizer(target: self,
-                                                //action: #selector(handleTap(recognizer:)))
+
         textField1.text = "Choose One"
     }
-
-//    @objc func handleTap(recognizer: UITapGestureRecognizer) {
-//        // presentingViewController.dismiss(animated: true)
-//         print("ADDPEOPLEHANDLETAP SLIDE")
-//         //dismiss(animated: true)
-//
-//     }
     
     @IBAction func dismissButton(_ sender: UIButton) {
         
@@ -63,11 +53,6 @@ class AddPeopleViewController: UIViewController {
     }
     
     //FUNCTION THAT GRABS DATA FROM PEOPLE POOL
-    
-    func tempMethod()
-    {
-        print("MADE IT TO ADD PEOPLE")
-    }
 
     
 }

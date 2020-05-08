@@ -18,9 +18,9 @@ import FSCalendar
  Users will land here after launching and after initial set up.
  
  - Author: Hope Welch
- - Version: 0.1
+ - Version: 0.5
  
- As of v0.1, this is named View Controller and the second view is named MainViewController. TODO: The naming needs to be fixed
+ Many capabilities have been implemented, including transition animation of 3 types, tap gesture dismissal, calendar view
  */
 class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDelegate, UIGestureRecognizerDelegate {
     
@@ -28,6 +28,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
     @IBOutlet weak var calendar: FSCalendar!
     
     //MARK: - Properties
+    
+    //The following are transition delegates that determine the type of animation a view will have
     let transitionR = SlideInTransitionRight()
     let transitionU = SlideInTransitionUp()
     let transitionL = SlideInTransitionLeft()
@@ -63,20 +65,13 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
     
     /**
      This is the action for the filter button
+        It indicates that the FilterViewController should be presented on top of the current view
      */
     @IBAction func didFilters(_ sender: UIBarButtonItem) {
-//        guard let filterViewController = storyboard?.instantiateViewController(withIdentifier:
-//            "FilterViewController") as? FilterViewController else { return }
-//        filterViewController.modalPresentationStyle = .popover
-//        present(filterViewController, animated: true)
-        
-        //print("in addFriends function in Home1")
+
          guard let filterViewController = storyboard?.instantiateViewController(withIdentifier:
              "FilterViewController") as? FilterViewController else { return }
-         //addPeopleViewController.tempMethod() = { menuType in
-             //self.transitionToNewU()
-         //}
-        //print("in addFriends function in Home2")
+
          filterViewController.modalPresentationStyle = .overCurrentContext
          filterViewController.transitioningDelegate = self
          present(filterViewController, animated: true)
@@ -84,19 +79,13 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
     
     /**
      This is the button for adding friends
+        It indicates that the AddPeopleVIewController should be presented on top of the current view
      */
     @IBAction func addFriends(_ sender: UIButton) {
-//        guard let addPeopleViewController = storyboard?.instantiateViewController(withIdentifier:
-//                   "AddPeopleViewController") as? AddPeopleViewController else { return }
-//               addPeopleViewController.modalPresentationStyle = .popover
-//               present(addPeopleViewController, animated: true)
-        print("in addFriends function in Home1")
+
          guard let addPeopleViewController = storyboard?.instantiateViewController(withIdentifier:
              "AddPeopleViewController") as? AddPeopleViewController else { return }
-         //addPeopleViewController.tempMethod() = { menuType in
-             //self.transitionToNewU()
-         //}
-        print("in addFriends function in Home2")
+
          addPeopleViewController.modalPresentationStyle = .overCurrentContext
          addPeopleViewController.transitioningDelegate = self
          present(addPeopleViewController, animated: true)
@@ -121,7 +110,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
     
     //MARK: - Animation
     /**
-     I don't think this method is necessary?? idk . . . .
+     I don't think this method is necessary?? Keeping just in case I need this for populating a view?
      */
     func transitionToNewU()
     {
@@ -129,6 +118,9 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
         
     }
     
+    /**
+     This function 1) changes the title of the selected view 2) Determines which view to present
+     */
     func transitionToNewR(_ menuType: MenuType) {
         
         //Change the HomeView title MAJOR Q:: DOES THIS BELONG HERE WITH MVC??
@@ -152,14 +144,12 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
             break;
         }
 
-        print("inside transition to new, swithc menutype")
         //Action to perform depending on which menuType was tapped
         switch menuType {
         case .profile:
             guard let profileViewController = storyboard?.instantiateViewController(withIdentifier:
                 "ProfileSettingViewController") as? ProfileSettingViewController else { return }
             profileViewController.modalPresentationStyle = .popover
-            //print("profile view animated true")
             present(profileViewController, animated: true)
         case .createNew:
             guard let addPViewController = storyboard?.instantiateViewController(withIdentifier:
@@ -177,7 +167,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
     }//the end of transitionToNew in case you are lost
     
    
-//
 
 
 
@@ -187,14 +176,17 @@ extension HomeViewController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
 
         let className = String(describing: presented.self)
+        
         if className.contains("MenuViewController")
         {
             transitionR.isPresenting = true
             return transitionR
+            
         } else if className.contains("AddPeopleViewController")
         {
             transitionU.isPresenting = true
             return transitionU
+            
         } else if className.contains("FilterViewController")
         {
             transitionL.isPresenting = true
@@ -205,14 +197,17 @@ extension HomeViewController: UIViewControllerTransitioningDelegate {
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         let className = String(describing: dismissed.self)
+        
         if className.contains("MenuViewController")
         {
             transitionR.isPresenting = false
             return transitionR
+            
         } else if className.contains("AddPeopleViewController")
         {
             transitionU.isPresenting = false
             return transitionU
+            
         } else if className.contains("FilterViewController")
         {
             transitionL.isPresenting = false
@@ -221,17 +216,4 @@ extension HomeViewController: UIViewControllerTransitioningDelegate {
         return transitionL
     }
 }
-////MARK: - Transition Up
-//extension HomeViewController: UIViewControllerTransitioningDelegate {
-//    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        transitionU.isPresenting = true
-//        //print("transition = true")
-//        return transitionU
-//    }
-//
-//    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        transitionU.isPresenting = false
-//        //print("transition = false")
-//        return transitionU
-//    }
-//}
+
