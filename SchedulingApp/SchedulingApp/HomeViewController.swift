@@ -78,13 +78,13 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
 //                   "AddPeopleViewController") as? AddPeopleViewController else { return }
 //               addPeopleViewController.modalPresentationStyle = .popover
 //               present(addPeopleViewController, animated: true)
-        
+        print("in addFriends function in Home1")
          guard let addPeopleViewController = storyboard?.instantiateViewController(withIdentifier:
              "AddPeopleViewController") as? AddPeopleViewController else { return }
-         addPeopleViewController.didTapMenuType = { menuType in
-             self.transitionToNewU()
-         }
-        
+         //addPeopleViewController.tempMethod() = { menuType in
+             //self.transitionToNewU()
+         //}
+        print("in addFriends function in Home2")
          addPeopleViewController.modalPresentationStyle = .overCurrentContext
          addPeopleViewController.transitioningDelegate = self
          present(addPeopleViewController, animated: true)
@@ -108,7 +108,9 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
     }
     
     //MARK: - Animation
-    
+    /**
+     I don't think this method is necessary?? idk . . . .
+     */
     func transitionToNewU()
     {
         print("newU")
@@ -138,7 +140,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
             break;
         }
 
-        //print("inside transition to new, swithc menutype")
+        print("inside transition to new, swithc menutype")
         //Action to perform depending on which menuType was tapped
         switch menuType {
         case .profile:
@@ -171,15 +173,32 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
 //MARK: - Transition Right
 extension HomeViewController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        transitionR.isPresenting = true
+
+        let className = String(describing: presented.self)
+        if className.contains("MenuViewController")
+        {
+            transitionR.isPresenting = true
+            return transitionR
+        } else if className.contains("AddPeopleViewController")
+        {
+            transitionU.isPresenting = true
+        }
         
-        return transitionR
+        return transitionU
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        transitionR.isPresenting = false
-        //print("transition = false")
-        return transitionR
+        let className = String(describing: dismissed.self)
+        if className.contains("MenuViewController")
+        {
+            transitionR.isPresenting = false
+            return transitionR
+        } else if className.contains("AddPeopleViewController")
+        {
+            transitionU.isPresenting = false
+        }
+        
+        return transitionU
     }
 }
 ////MARK: - Transition Up

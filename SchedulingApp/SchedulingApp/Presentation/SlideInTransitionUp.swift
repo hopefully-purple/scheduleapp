@@ -1,8 +1,6 @@
 //
-//  SlideInTransition.swift
+//  SlideInTransitionUp.swift
 //  SchedulingApp
-//
-// MAJOR TODO:::: MAKE THIS REUSABLE??
 //
 //
 //https://www.raywenderlich.com/3636807-uipresentationcontroller-tutorial-getting-started

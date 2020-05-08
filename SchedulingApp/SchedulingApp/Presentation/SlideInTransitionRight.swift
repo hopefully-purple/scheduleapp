@@ -1,5 +1,5 @@
 //
-//  SlideInTransition.swift
+//  SlideInTransitionRight.swift
 //  SchedulingApp
 //
 // MAJOR TODO:::: MAKE THIS REUSABLE?? 
