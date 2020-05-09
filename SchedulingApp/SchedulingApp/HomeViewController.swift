@@ -27,6 +27,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
     //MARK: - IBOutlets
     @IBOutlet weak var calendar: FSCalendar!
     
+    @IBOutlet weak var scheduleDetailField: UITextField!
     @IBOutlet weak var addFriendsButton: UIButton!
     //MARK: - Properties
     
@@ -56,14 +57,19 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
         
     }
     
-    
+    /**
+     Calendar actions
+     */
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE MM-dd-YYYY"
-        let string = formatter.string(from: date)
-        print(string)
+        let selectedDate = formatter.string(from: date)
+        scheduleDetailField.text = selectedDate
     }
     
+    @IBAction func newEvent(_ sender: UIButton) {
+        print("Add a new Event!!")
+    }
     /**
      This is the action for the filter button
         It indicates that the FilterViewController should be presented on top of the current view
