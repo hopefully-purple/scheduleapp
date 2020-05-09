@@ -56,6 +56,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addFriendsButton" destination="9cg-7g-Z8t" id="E69-0o-fda"/>
                         <outlet property="calendar" destination="LdT-A3-ChJ" id="uLx-N5-GRR"/>
                     </connections>
                 </viewController>
@@ -354,9 +355,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ej-H7-y81">
-                                <rect key="frame" x="163" y="163" width="113" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ej-H7-y81">
+                                <rect key="frame" x="163" y="244" width="113" height="30"/>
                                 <state key="normal" title="Dismiss"/>
                                 <connections>
                                     <action selector="dismissButton:" destination="m5V-Rz-b9a" eventType="touchUpInside" id="cqQ-vP-Nz2"/>
@@ -364,6 +364,9 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="0Ej-H7-y81" firstAttribute="top" secondItem="qX1-eh-OzW" secondAttribute="top" constant="200" id="SJN-XH-3fO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qX1-eh-OzW"/>
                     </view>
                     <connections>

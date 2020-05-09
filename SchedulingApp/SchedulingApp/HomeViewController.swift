@@ -27,6 +27,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
     //MARK: - IBOutlets
     @IBOutlet weak var calendar: FSCalendar!
     
+    @IBOutlet weak var addFriendsButton: UIButton!
     //MARK: - Properties
     
     //The following are transition delegates that determine the type of animation a view will have
@@ -49,7 +50,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
         super.viewDidLoad()
         
         calendar.delegate = self
- 
+        addFriendsButton.isHidden = true
         //TODO: Get appropriate inforamtion from the model to determine the correct placeholder name
        // scheduleNameL.placeholder = "My Schedule"
         
@@ -132,12 +133,15 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
         case "mySchedule":
             title = "My Schedule"
             self.title = title
+            addFriendsButton.isHidden = true
         case "groupSchedule":
             title = "Group Schedule" //Eventually get specific info
             self.title = title
+            addFriendsButton.isHidden = false
         case "createNew":
             title = "New Group"
             self.title = title
+            addFriendsButton.isHidden = false
         case "settings":
             break;
         default:
@@ -152,12 +156,14 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
             profileViewController.modalPresentationStyle = .popover
             present(profileViewController, animated: true)
         case .createNew:
-            guard let addPViewController = storyboard?.instantiateViewController(withIdentifier:
+            guard let addPeopleViewController = storyboard?.instantiateViewController(withIdentifier:
                 "AddPeopleViewController") as? AddPeopleViewController else { return }
-            addPViewController.modalPresentationStyle = .pageSheet
-            present(addPViewController, animated: true)
+
+            addPeopleViewController.modalPresentationStyle = .overCurrentContext
+            addPeopleViewController.transitioningDelegate = self
+            present(addPeopleViewController, animated: true)
         case .groupSchedule:
-            print("Groups")
+            print("groups")
             //This might be where we reveal the Add button?
         default:
            //print("DEFAULT IN HOME")
@@ -165,10 +171,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
         }
     
     }//the end of transitionToNew in case you are lost
-    
-   
-
-
+ 
 
 }//end of class
 //MARK: - Transition Right

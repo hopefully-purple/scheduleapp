@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		28C50FCD10E910388C52ED33 /* Pods_SchedulingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F26CF1CC44103CF900E7D /* Pods_SchedulingApp.framework */; };
 		2E140872242BB35C0090953D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E140871242BB35C0090953D /* MenuViewController.swift */; };
 		2E3B643E243E6B58000ADD0C /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3B643D243E6B58000ADD0C /* Profile.swift */; };
 		2E3B6440243E7058000ADD0C /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3B643F243E7058000ADD0C /* Schedule.swift */; };
@@ -18,6 +17,7 @@
 		2E7CCD5C243AA0D800BB211D /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CCD5B243AA0D800BB211D /* FilterViewController.swift */; };
 		2E7CCD5E243AA20900BB211D /* ProfileSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CCD5D243AA20900BB211D /* ProfileSettingViewController.swift */; };
 		2E7CCD60243BC32E00BB211D /* SlideInTransitionRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CCD5F243BC32E00BB211D /* SlideInTransitionRight.swift */; };
+		2E9FB87B2466341800846982 /* Pods_SchedulingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F26CF1CC44103CF900E7D /* Pods_SchedulingApp.framework */; };
 		6E407429242BA2E10024923B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E407428242BA2E10024923B /* AppDelegate.swift */; };
 		6E40742B242BA2E10024923B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40742A242BA2E10024923B /* SceneDelegate.swift */; };
 		6E40742D242BA2E10024923B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40742C242BA2E10024923B /* HomeViewController.swift */; };
@@ -88,7 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28C50FCD10E910388C52ED33 /* Pods_SchedulingApp.framework in Frameworks */,
+				2E9FB87B2466341800846982 /* Pods_SchedulingApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,6 +640,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TKVK98D98S;
 				INFOPLIST_FILE = SchedulingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -658,6 +659,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TKVK98D98S;
 				INFOPLIST_FILE = SchedulingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -677,6 +679,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TKVK98D98S;
 				INFOPLIST_FILE = SchedulingAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -699,6 +702,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TKVK98D98S;
 				INFOPLIST_FILE = SchedulingAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -720,6 +724,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TKVK98D98S;
 				INFOPLIST_FILE = SchedulingAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -740,6 +745,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TKVK98D98S;
 				INFOPLIST_FILE = SchedulingAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
