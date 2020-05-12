@@ -37,8 +37,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
     let transitionL = SlideInTransitionLeft()
     let popout = PopOutAnimation()
     
-    //This is the textfield for the name of the schedule
-    //@IBOutlet weak var scheduleNameL: UITextField!
+    var testing:String = ""
     
     
     //MARK: - Functions
@@ -67,12 +66,19 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
         let selectedDate = formatter.string(from: date)
         scheduleDetailField.text = selectedDate
         
+        //let vc = DayViewController(nibName: "DayViewController", bundle: nil)
+        //vc.date = "Next level blog photo booth, tousled authentic tote bag kogi"
+
+        //navigationController?.pushViewController(vc, animated: true)
+        
         guard let dayViewController = storyboard?.instantiateViewController(withIdentifier:
             "DayViewController") as? DayViewController else { return }
 
         dayViewController.modalPresentationStyle = .overCurrentContext
         dayViewController.transitioningDelegate = self
+        dayViewController.date = selectedDate
         present(dayViewController, animated: true)
+        
     }
     
     @IBAction func newEvent(_ sender: UIButton) {

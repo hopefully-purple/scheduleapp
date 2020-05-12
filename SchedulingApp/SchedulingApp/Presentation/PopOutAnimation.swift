@@ -26,7 +26,7 @@ class PopOutAnimation: NSObject, UIViewControllerAnimatedTransitioning {
     }
     
 @objc func handleTap(recognizer: UITapGestureRecognizer) {
-
+   
     dismissingView.dismiss(animated: true)
 }
     

@@ -10,10 +10,20 @@ import UIKit
 
 class DayViewController: UIViewController {
 
+    //MARK: - IBOutlets
+    @IBOutlet weak var textField1: UITextField!
+    @IBOutlet weak var label1: UILabel!
+    
+    //MARK: - Properties
+    let home = HomeViewController()
+    var date:String = ""
+    
+    
+    //MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        label1.text = date
     }
     
 

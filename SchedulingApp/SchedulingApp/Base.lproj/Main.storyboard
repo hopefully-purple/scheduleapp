@@ -339,7 +339,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JeZ-Ht-eNi">
-                                <rect key="frame" x="137" y="74" width="42" height="20.5"/>
+                                <rect key="frame" x="30" y="74" width="354" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -355,11 +355,16 @@
                             <constraint firstItem="677-Vd-mbd" firstAttribute="trailing" secondItem="XDg-Nc-QbH" secondAttribute="trailing" constant="38" id="6iL-5s-RYG"/>
                             <constraint firstItem="XDg-Nc-QbH" firstAttribute="leading" secondItem="677-Vd-mbd" secondAttribute="leading" constant="38" id="7cs-S1-pZE"/>
                             <constraint firstItem="JeZ-Ht-eNi" firstAttribute="top" secondItem="677-Vd-mbd" secondAttribute="top" constant="30" id="FWX-0x-OJj"/>
-                            <constraint firstItem="JeZ-Ht-eNi" firstAttribute="leading" secondItem="677-Vd-mbd" secondAttribute="leading" constant="137" id="Z9r-ZP-gIF"/>
+                            <constraint firstItem="677-Vd-mbd" firstAttribute="trailing" secondItem="JeZ-Ht-eNi" secondAttribute="trailing" constant="30" id="iJi-C6-qRg"/>
+                            <constraint firstItem="JeZ-Ht-eNi" firstAttribute="leading" secondItem="677-Vd-mbd" secondAttribute="leading" constant="30" id="ue8-NE-1WD"/>
                             <constraint firstItem="XDg-Nc-QbH" firstAttribute="top" secondItem="JeZ-Ht-eNi" secondAttribute="bottom" constant="8" id="xPm-Sd-LnD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="677-Vd-mbd"/>
                     </view>
+                    <connections>
+                        <outlet property="label1" destination="JeZ-Ht-eNi" id="qRM-2n-H9U"/>
+                        <outlet property="textField1" destination="XDg-Nc-QbH" id="tZg-Wq-AD7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nXY-Qq-YvM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
