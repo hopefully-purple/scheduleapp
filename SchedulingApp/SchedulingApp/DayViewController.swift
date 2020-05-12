@@ -6,16 +6,25 @@
 //  Copyright © 2020 PWGTC. All rights reserved.
 //
 
-import SwiftUI
+import UIKit
 
-struct DayViewController: UIViewController {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+class DayViewController: UIViewController {
 
-struct DayViewController_Previews: PreviewProvider {
-    static var previews: some View {
-        DayViewController()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
     }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
 }

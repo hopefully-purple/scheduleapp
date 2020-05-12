@@ -35,6 +35,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
     let transitionR = SlideInTransitionRight()
     let transitionU = SlideInTransitionUp()
     let transitionL = SlideInTransitionLeft()
+    let popout = PopOutAnimation()
     
     //This is the textfield for the name of the schedule
     //@IBOutlet weak var scheduleNameL: UITextField!
@@ -65,6 +66,13 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
         formatter.dateFormat = "EEEE MM-dd-YYYY"
         let selectedDate = formatter.string(from: date)
         scheduleDetailField.text = selectedDate
+        
+        guard let dayViewController = storyboard?.instantiateViewController(withIdentifier:
+            "DayViewController") as? DayViewController else { return }
+
+        dayViewController.modalPresentationStyle = .overCurrentContext
+        dayViewController.transitioningDelegate = self
+        present(dayViewController, animated: true)
     }
     
     @IBAction func newEvent(_ sender: UIButton) {
@@ -186,7 +194,11 @@ extension HomeViewController: UIViewControllerTransitioningDelegate {
 
         let className = String(describing: presented.self)
         
-        if className.contains("MenuViewController")
+        if className.contains("DayViewController")
+        {
+            popout.isPresenting = true
+            return popout
+        } else if className.contains("MenuViewController")
         {
             transitionR.isPresenting = true
             return transitionR
@@ -207,7 +219,11 @@ extension HomeViewController: UIViewControllerTransitioningDelegate {
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         let className = String(describing: dismissed.self)
         
-        if className.contains("MenuViewController")
+        if className.contains("DayViewController")
+        {
+           popout.isPresenting = true
+           return popout
+        } else if className.contains("MenuViewController")
         {
             transitionR.isPresenting = false
             return transitionR
