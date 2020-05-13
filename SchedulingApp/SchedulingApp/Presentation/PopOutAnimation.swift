@@ -39,6 +39,10 @@ class PopOutAnimation: NSObject, UIViewControllerAnimatedTransitioning {
         
         let containerView = transitionContext.containerView
         
+        //Resize DayView
+       toViewController.view.fs_height *= 0.4
+       toViewController.view.fs_width *= 0.85
+        
         //0.8 makes it slid 80% across
         let finalWidth = toViewController.view.bounds.width
         let finalHeight = toViewController.view.bounds.height //* 0.35
@@ -58,11 +62,9 @@ class PopOutAnimation: NSObject, UIViewControllerAnimatedTransitioning {
             //Add Day view controller to container
             containerView.addSubview(toViewController.view)
             
-            //Resize DayView
-            //toViewController.view.fs_height *= 0.25
-            
             //Initial frame off the screen
-            toViewController.view.frame =  CGRect(x: finalWidth, y: finalHeight * 0.35, width: finalWidth * 0.85, height: finalHeight * 0.4)
+            //toViewController.view.frame =  CGRect(x: finalWidth, y: finalHeight * 0.35, width: finalWidth * 0.85, height: finalHeight * 0.4)
+            toViewController.view.frame =  CGRect(x: finalWidth, y: finalHeight * 0.8, width: finalWidth, height: finalHeight)
         }
 
 

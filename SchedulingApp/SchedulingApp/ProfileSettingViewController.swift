@@ -10,21 +10,30 @@ import UIKit
 
 class ProfileSettingViewController: UIViewController {
 
-    let profile = Profile()
+    //MARK: - IBOutlets
     
     @IBOutlet weak var profileName: UITextField!
     
+    //MARK: - Properties
+    
+     //let profile = Profile()
+    
+   //MARK: - Functions
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
        self.profileName.addTarget(self, action: #selector(onReturn), for: UIControl.Event.editingDidEndOnExit)
          
         //MAJOR TODO: HOW TO GET THE INPUT TO BE 'SAVED' AND STAY THERE ON RE-ENTRY
-        if profile.name == ""
+        if Profile().name == ""
         {
             profileName.placeholder = "Name"
         } else {
-            profileName.placeholder = profile.name
+            profileName.placeholder = Profile().name
         }
+        
+        print("ProfileView: \(Profile().name)")
         
     }
     
@@ -34,7 +43,7 @@ class ProfileSettingViewController: UIViewController {
        
         //Update model
         let name = String(describing: self.profileName.text)
-        profile.name = name
+        Profile().setName(string: name)
       
      }
     

@@ -21,7 +21,7 @@ import Foundation
  */
 class Profile
 {
-    var name: String
+    var name:String = ""
 
     //Eventually, we'll probably have a friend count, schedule count, scheduleID, etc
     
@@ -33,6 +33,11 @@ class Profile
         self.name = ""
     }
     
+    func setName(string: String)
+    {
+        self.name = string
+        print(name)
+    }
     
     
 }
