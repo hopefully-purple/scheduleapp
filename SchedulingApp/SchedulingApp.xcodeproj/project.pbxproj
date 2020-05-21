@@ -20,6 +20,7 @@
 		2E9FB87B2466341800846982 /* Pods_SchedulingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F26CF1CC44103CF900E7D /* Pods_SchedulingApp.framework */; };
 		2E9FB8812466560C00846982 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9FB8802466560C00846982 /* DayViewController.swift */; };
 		2E9FB8832466577D00846982 /* PopOutAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9FB8822466577D00846982 /* PopOutAnimation.swift */; };
+		2EC52B612476D83A0083E2AD /* PeoplePoolSample.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2EC52B602476D83A0083E2AD /* PeoplePoolSample.txt */; };
 		6E407429242BA2E10024923B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E407428242BA2E10024923B /* AppDelegate.swift */; };
 		6E40742B242BA2E10024923B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40742A242BA2E10024923B /* SceneDelegate.swift */; };
 		6E40742D242BA2E10024923B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40742C242BA2E10024923B /* HomeViewController.swift */; };
@@ -63,6 +64,7 @@
 		2E7CCD5F243BC32E00BB211D /* SlideInTransitionRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInTransitionRight.swift; sourceTree = "<group>"; };
 		2E9FB8802466560C00846982 /* DayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
 		2E9FB8822466577D00846982 /* PopOutAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOutAnimation.swift; sourceTree = "<group>"; };
+		2EC52B602476D83A0083E2AD /* PeoplePoolSample.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = PeoplePoolSample.txt; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		431F26CF1CC44103CF900E7D /* Pods_SchedulingApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SchedulingApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		502F00C15FF3240C616DC77D /* Pods_SchedulingAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SchedulingAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E407425242BA2E10024923B /* SchedulingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchedulingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +137,14 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
+		2EC52B5F2476D7E00083E2AD /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2EC52B602476D83A0083E2AD /* PeoplePoolSample.txt */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		6E40741C242BA2E10024923B = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +172,7 @@
 			children = (
 				6E407428242BA2E10024923B /* AppDelegate.swift */,
 				6E40742A242BA2E10024923B /* SceneDelegate.swift */,
+				2EC52B5F2476D7E00083E2AD /* Data */,
 				2E3B643A243E68F6000ADD0C /* Model */,
 				2E3B643B243E6919000ADD0C /* Presentation */,
 				6E40742C242BA2E10024923B /* HomeViewController.swift */,
@@ -332,6 +343,7 @@
 				6E407435242BA2E60024923B /* LaunchScreen.storyboard in Resources */,
 				6E407432242BA2E60024923B /* Assets.xcassets in Resources */,
 				6E407430242BA2E10024923B /* Main.storyboard in Resources */,
+				2EC52B612476D83A0083E2AD /* PeoplePoolSample.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -50,9 +50,16 @@ class AddPeopleViewController: UIViewController {
     
     @IBAction func manual(_ sender: UIButton) {
         textField1.text = "Pulling up data from people pool . . ."
+        
+        //call function that pulls up people
     }
     
-    //FUNCTION THAT GRABS DATA FROM PEOPLE POOL
+    //function that displays a list of people
+    
+    //function that reads the peoplepool data file.
+    func getPeople(){
+        //how to use json in swift? turn it into an object? like .parse from tankwars
+    }
 
     
 }
