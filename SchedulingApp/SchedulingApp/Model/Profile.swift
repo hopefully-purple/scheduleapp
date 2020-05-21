@@ -36,7 +36,7 @@ class Profile
     func setName(string: String)
     {
         self.name = string
-        print("Profeil Model \(name)")
+        print("Profile Model \(name)")
     }
     
     

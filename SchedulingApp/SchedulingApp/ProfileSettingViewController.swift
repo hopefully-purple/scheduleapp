@@ -41,7 +41,7 @@ class ProfileSettingViewController: UIViewController {
         self.profileName.resignFirstResponder()
        
         //Update model
-        let name = String(describing: self.profileName.text)
+        let name = self.profileName.text ?? ""
         profile.setName(string: name)
      }
     
