@@ -37,7 +37,9 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
     let transitionL = SlideInTransitionLeft()
     let popout = PopOutAnimation()
     
-    var testing:String = ""
+    var testing: String = ""
+    
+    var profile: Profile = Profile()
     
     
     //MARK: - Functions
@@ -54,6 +56,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
         addFriendsButton.isHidden = true
         //TODO: Get appropriate inforamtion from the model to determine the correct placeholder name
        // scheduleNameL.placeholder = "My Schedule"
+        
+        
         
     }
     
@@ -173,6 +177,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
         case .profile:
             guard let profileViewController = storyboard?.instantiateViewController(withIdentifier:
                 "ProfileSettingViewController") as? ProfileSettingViewController else { return }
+            profileViewController.profile = profile
             profileViewController.modalPresentationStyle = .popover
             present(profileViewController, animated: true)
         case .createNew:

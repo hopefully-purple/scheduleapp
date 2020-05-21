@@ -16,7 +16,7 @@ class ProfileSettingViewController: UIViewController {
     
     //MARK: - Properties
     
-     let profile = Profile()
+    var profile: Profile = Profile()
     
    //MARK: - Functions
     
