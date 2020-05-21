@@ -40,12 +40,12 @@ class PopOutAnimation: NSObject, UIViewControllerAnimatedTransitioning {
         let containerView = transitionContext.containerView
         
         //Resize DayView
-       toViewController.view.fs_height *= 0.4
-       toViewController.view.fs_width *= 0.85
+       //toViewController.view.fs_height *= 0.4
+       //toViewController.view.fs_width *= 0.85
         
         //0.8 makes it slid 80% across
-        let finalWidth = toViewController.view.bounds.width
-        let finalHeight = toViewController.view.bounds.height //* 0.35
+        let finalWidth = toViewController.view.bounds.width * 0.85
+        let finalHeight = toViewController.view.bounds.height * 0.4//* 0.35
  
         if isPresenting {
             //Add dimming view
@@ -79,12 +79,13 @@ class PopOutAnimation: NSObject, UIViewControllerAnimatedTransitioning {
             self.dimmingView.alpha = 0.0
             fromViewController.view.transform = .identity
         }
-        //print("in SlideInTransition after let identity")
+     
         //Animation of the transition
         let duration = transitionDuration(using: transitionContext)
         let isCancelled = transitionContext.transitionWasCancelled
         UIView.animate(withDuration: duration, animations: {
             self.isPresenting ? transform() : identity()
+            print("self is presenting: \(self.isPresenting)")
         }) { (_) in
             transitionContext.completeTransition(!isCancelled)
         }

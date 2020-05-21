@@ -16,7 +16,7 @@ class ProfileSettingViewController: UIViewController {
     
     //MARK: - Properties
     
-     //let profile = Profile()
+     let profile = Profile()
     
    //MARK: - Functions
     
@@ -26,15 +26,14 @@ class ProfileSettingViewController: UIViewController {
        self.profileName.addTarget(self, action: #selector(onReturn), for: UIControl.Event.editingDidEndOnExit)
          
         //MAJOR TODO: HOW TO GET THE INPUT TO BE 'SAVED' AND STAY THERE ON RE-ENTRY
-        if Profile().name == ""
+        if profile.name == ""
         {
             profileName.placeholder = "Name"
         } else {
-            profileName.placeholder = Profile().name
+            profileName.text = profile.name
         }
         
-        print("ProfileView: \(Profile().name)")
-        
+        print("ProfileView: \(profile.name)")
     }
     
      @IBAction func onReturn() {
@@ -43,8 +42,7 @@ class ProfileSettingViewController: UIViewController {
        
         //Update model
         let name = String(describing: self.profileName.text)
-        Profile().setName(string: name)
-      
+        profile.setName(string: name)
      }
     
     

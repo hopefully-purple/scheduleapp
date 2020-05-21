@@ -83,6 +83,7 @@ class SlideInTransitionRight: NSObject, UIViewControllerAnimatedTransitioning {
         let isCancelled = transitionContext.transitionWasCancelled
         UIView.animate(withDuration: duration, animations: {
             self.isPresenting ? transform() : identity()
+            print("self is presenting: \(self.isPresenting)")
         }) { (_) in
             transitionContext.completeTransition(!isCancelled)
         }

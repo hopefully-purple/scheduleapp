@@ -227,7 +227,7 @@ extension HomeViewController: UIViewControllerTransitioningDelegate {
         
         if className.contains("DayViewController")
         {
-           popout.isPresenting = true
+           popout.isPresenting = false
            return popout
         } else if className.contains("MenuViewController")
         {
