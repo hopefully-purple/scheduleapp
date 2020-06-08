@@ -21,6 +21,7 @@
 		2E9FB8812466560C00846982 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9FB8802466560C00846982 /* DayViewController.swift */; };
 		2E9FB8832466577D00846982 /* PopOutAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9FB8822466577D00846982 /* PopOutAnimation.swift */; };
 		2EC52B612476D83A0083E2AD /* PeoplePoolSample.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2EC52B602476D83A0083E2AD /* PeoplePoolSample.txt */; };
+		2EE0390A248ED584003B93DB /* JSONFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE03909248ED584003B93DB /* JSONFile.swift */; };
 		6E407429242BA2E10024923B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E407428242BA2E10024923B /* AppDelegate.swift */; };
 		6E40742B242BA2E10024923B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40742A242BA2E10024923B /* SceneDelegate.swift */; };
 		6E40742D242BA2E10024923B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40742C242BA2E10024923B /* HomeViewController.swift */; };
@@ -65,6 +66,7 @@
 		2E9FB8802466560C00846982 /* DayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
 		2E9FB8822466577D00846982 /* PopOutAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOutAnimation.swift; sourceTree = "<group>"; };
 		2EC52B602476D83A0083E2AD /* PeoplePoolSample.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = PeoplePoolSample.txt; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
+		2EE03909248ED584003B93DB /* JSONFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFile.swift; sourceTree = "<group>"; };
 		431F26CF1CC44103CF900E7D /* Pods_SchedulingApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SchedulingApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		502F00C15FF3240C616DC77D /* Pods_SchedulingAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SchedulingAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E407425242BA2E10024923B /* SchedulingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchedulingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +124,7 @@
 			children = (
 				2E3B643D243E6B58000ADD0C /* Profile.swift */,
 				2E3B643F243E7058000ADD0C /* Schedule.swift */,
+				2EE03909248ED584003B93DB /* JSONFile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				6E40742D242BA2E10024923B /* HomeViewController.swift in Sources */,
 				6E407429242BA2E10024923B /* AppDelegate.swift in Sources */,
 				2E416FFC246355690083A650 /* CodeDump.swift in Sources */,
+				2EE0390A248ED584003B93DB /* JSONFile.swift in Sources */,
 				6E40742B242BA2E10024923B /* SceneDelegate.swift in Sources */,
 				2E62ED512464A50600ACFF89 /* SlideInTransitionUp.swift in Sources */,
 				2E9FB8812466560C00846982 /* DayViewController.swift in Sources */,
