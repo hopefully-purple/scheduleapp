@@ -18,39 +18,10 @@ class JSONPeopleReader
     //MARK: - Functions
     
     //This function reads
-    static func read()//-> Array<String>
+    static func read() -> Array<String>
     {
-        var array = [String?]()
+        var array = [String]()
         
-        //A bit of networking
-        //Hit the API endpoint (not good idea to have it hardcoded like this
-//        let urlString = "http://newsapi.org/v2/everything?q=bitcoin&from=2020-05-08&sortBy=publishedAt&apiKey=API_KEY"
-//
-//        //Turning urlString into a URL object
-//        let url = URL(string: urlString)
-//        guard url != nil else { return } //confirm it's not nil
-//
-//        let session = URLSession.shared
-//
-//        let dataTask = session.dataTask(with: url!) { (data, response, error) in
-//            //Check for errors
-//            if error == nil && data != nil {
-//                //Parse JSON
-//                let decoder = JSONDecoder()
-//                do {
-//                    let newsFeed = try decoder.decode(JSOCodableFile.self, from: data!)
-//                    print(newsFeed)
-//                }
-//                catch {
-//                    print("Error in JSON parsing")
-//                }
-//
-//            }
-//        }
-//        //Make the API call
-//        dataTask.resume()
-        
-        //____________________
         JSONFile.downloadPeopleList { jsonData in
             guard let jData = jsonData else { return } //grabbing jsonData, putting it in jData, checking if nil
             //do
@@ -63,23 +34,17 @@ class JSONPeopleReader
                         for name in names
                         {
                             for (key, value) in name {
-                                print("\(value)")
-                                // array.append()
+                                array.append(value)
                             }
                         }
                     }
-                    //  let className = String(describing: presented.self)                   if let friends = json["friends"] as? Array<Dictionary<String, Any>> {
-                    //                            for friend in friends {
-                    //                                if let handle = friend["handle"] as? String {
-                    //                                    print(handle)
-                    //                                }
                // }
                // catch { //if json is bad
                  //   print("JSON is bad \(error)")
                 //}
             }
         }
-        //return array
+        return array
     }
         
 }

@@ -30,7 +30,7 @@ class AddPeopleViewController: UIViewController {
     @IBOutlet weak var textField1: UITextField!
     
 //MARK: - Properties
-     var didTapMenuType: ((MenuType) -> Void)?
+    // var didTapMenuType: ((MenuType) -> Void)?
     
     //MARK: - Functions
     override func viewDidLoad() {
@@ -63,14 +63,10 @@ class AddPeopleViewController: UIViewController {
      Function that calls JSONPeopleReader to get a list of names from the pool
      */
     func getPeople(){
-        JSONPeopleReader.read()
-//        let names = JSONPeopleReader.read()
-//
-//        for name in names {
-//            print(name)
-//        }
-        
-        
+        let names = JSONPeopleReader.read()
+        for name in names {
+            print(name)
+        }
     }
 
     
