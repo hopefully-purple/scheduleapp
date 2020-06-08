@@ -11,7 +11,35 @@
 import Foundation
 
 
+//MARK: - JSON
 
+//Keeping this for later, but not directly applicable for the dictionary rn
+//                    if let firstName = json["first_name"] as? String { //casting the key as a string because we know it's a string
+//                        print(firstName)
+                            //print(names["title"] ?? "") //This would default to empty if title was nil
+// }
+//This is a dictionary that has a key of string paired with string value, and a string key paired with an array value
+  //                        if let friends = json["friends"] as? Array<Dictionary<String, Any>> {
+  //                            for friend in friends {
+  //                                if let handle = friend["handle"] as? String {
+  //                                    print(handle)
+  //                                }
+  //                                if let dates = friend["dates_logged_in"] as? Array<String> {
+  //                                    for rawDate in dates {
+  //                                        let formatterInput = ISO8601DateFormatter() //formatter for processing the date
+  //                                        if let date = formatterInput.date(from: rawDate){
+  //                                            let formatterOutput = DateFormatter() //formatter for making it pretty
+  //                                            formatterOutput.locale = Locale(identifier: "en_US") //grab the locale of the device dynamically instead!
+  //                                            formatterOutput.dateStyle = .short
+  //                                            print(formatterOutput.string(from: date))
+  //                                        }
+  //                                    }
+  //                                }
+  //                            }
+  //                        }
+  //                    }
+
+//MARK: - Taps
 //Bit of code taken from https://stackoverflow.com/questions/11553396/how-to-add-an-action-on-uitextfield-return-key
 //self.scheduleNameL.addTarget(self, action: #selector(onReturn), for: UIControl.Event.editingDidEndOnExit)
 /////////////////////

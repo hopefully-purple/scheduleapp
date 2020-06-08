@@ -11,7 +11,7 @@ import Foundation
 //Should be a dictionary where the only key is names and it's value is an array of names
 let peopleList = """
 {
-    "names": [{"name": "Bob"}, {"name": "Billy"}, {"name": "Joe"}, {"name": "Frank"}],
+    "names": [{"name1": "Bob"}, {"name2": "Billy"}, {"name3": "Joe"}, {"name4": "Frank"}],
     
     "friends": [
         {
@@ -29,8 +29,12 @@ let peopleList = """
 
 class JSONFile {
     //Simulating a real network request, where we put the string above into the data object, just like you might get from a url session in swift.
-    static func downloadPeopleList(completion:((_ json: Data?) -> Void)){
-        completion(Data(peopleList.utf8))
+    static func downloadPeopleList(completion:((_ json: Data?) throws -> Void)){
+        do {
+            try completion(Data(peopleList.utf8))
+        } catch {
+            print("Help")
+        }
     }
 }
 

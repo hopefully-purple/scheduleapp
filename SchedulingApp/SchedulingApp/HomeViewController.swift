@@ -201,6 +201,9 @@ class HomeViewController: UIViewController, UITextFieldDelegate, FSCalendarDeleg
 }//end of class
 //MARK: - Transition Right
 extension HomeViewController: UIViewControllerTransitioningDelegate {
+    /**
+     Animates delegates for view on
+     */
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
 
         let className = String(describing: presented.self)
@@ -227,6 +230,9 @@ extension HomeViewController: UIViewControllerTransitioningDelegate {
         return transitionL
     }
     
+    /**
+     Animates delegates for view off
+     */
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         let className = String(describing: dismissed.self)
         
