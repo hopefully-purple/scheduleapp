@@ -265,28 +265,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search For Friends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Uz-oM-sDb">
-                                <rect key="frame" x="52" y="64" width="310" height="44.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search For Friends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Uz-oM-sDb">
+                                <rect key="frame" x="42" y="90" width="320" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="37"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Uc-Vu-WV0">
-                                <rect key="frame" x="57" y="158.5" width="113" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Uc-Vu-WV0">
+                                <rect key="frame" x="57" y="256" width="131" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Search Manually"/>
                                 <connections>
                                     <action selector="manual:" destination="m5V-Rz-b9a" eventType="touchUpInside" id="ULO-0z-NA8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWK-eZ-Uro">
-                                <rect key="frame" x="190" y="158.5" width="136" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWK-eZ-Uro">
+                                <rect key="frame" x="206" y="256" width="136" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Search by proximity"/>
                                 <connections>
                                     <action selector="proximity:" destination="m5V-Rz-b9a" eventType="touchUpInside" id="BwP-XQ-D4X"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wpu-um-N1U">
-                                <rect key="frame" x="40" y="238.5" width="334" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wpu-um-N1U">
+                                <rect key="frame" x="51" y="382" width="323" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -299,20 +303,6 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="qX1-eh-OzW" firstAttribute="trailing" secondItem="wpu-um-N1U" secondAttribute="trailing" constant="40" id="4GK-sr-wRh"/>
-                            <constraint firstItem="6Uc-Vu-WV0" firstAttribute="top" secondItem="4Uz-oM-sDb" secondAttribute="bottom" constant="50" id="F2b-jO-Cn0"/>
-                            <constraint firstItem="QWK-eZ-Uro" firstAttribute="leading" secondItem="6Uc-Vu-WV0" secondAttribute="trailing" constant="20" id="MYW-ad-eYU"/>
-                            <constraint firstItem="wpu-um-N1U" firstAttribute="leading" secondItem="qX1-eh-OzW" secondAttribute="leading" constant="40" id="NeS-W4-ROM"/>
-                            <constraint firstItem="qX1-eh-OzW" firstAttribute="trailing" secondItem="4Uz-oM-sDb" secondAttribute="trailing" constant="52" id="URT-51-oIy"/>
-                            <constraint firstItem="4Uz-oM-sDb" firstAttribute="top" secondItem="qX1-eh-OzW" secondAttribute="top" constant="20" id="YNV-q9-fZA"/>
-                            <constraint firstItem="QWK-eZ-Uro" firstAttribute="leading" secondItem="6Uc-Vu-WV0" secondAttribute="trailing" constant="20" id="dYZ-3r-WJT"/>
-                            <constraint firstItem="4Uz-oM-sDb" firstAttribute="leading" secondItem="qX1-eh-OzW" secondAttribute="leading" constant="52" id="g5i-Ff-v6c"/>
-                            <constraint firstItem="wpu-um-N1U" firstAttribute="top" secondItem="6Uc-Vu-WV0" secondAttribute="bottom" constant="50" id="uEP-IW-RsC"/>
-                            <constraint firstItem="qX1-eh-OzW" firstAttribute="trailing" secondItem="QWK-eZ-Uro" secondAttribute="trailing" constant="57" id="ubM-Kn-abJ"/>
-                            <constraint firstItem="QWK-eZ-Uro" firstAttribute="top" secondItem="4Uz-oM-sDb" secondAttribute="bottom" constant="50" id="ult-My-ZhD"/>
-                            <constraint firstItem="6Uc-Vu-WV0" firstAttribute="leading" secondItem="qX1-eh-OzW" secondAttribute="leading" constant="57" id="zy1-on-h9u"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qX1-eh-OzW"/>
                     </view>
                     <connections>
