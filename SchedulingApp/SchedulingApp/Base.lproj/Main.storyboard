@@ -290,6 +290,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UxM-cS-8Vd">
+                                <rect key="frame" x="57" y="311" width="322" height="317"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -309,6 +316,7 @@
                         <viewLayoutGuide key="safeArea" id="qX1-eh-OzW"/>
                     </view>
                     <connections>
+                        <outlet property="ouputPeople" destination="UxM-cS-8Vd" id="DT5-Pe-cB3"/>
                         <outlet property="textField1" destination="wpu-um-N1U" id="Z3P-gm-Cw7"/>
                     </connections>
                 </viewController>

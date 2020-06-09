@@ -30,7 +30,9 @@ class AddPeopleViewController: UIViewController {
     @IBOutlet weak var textField1: UITextField!
     
 //MARK: - Properties
-    // var didTapMenuType: ((MenuType) -> Void)?
+    //var didTapMenuType: ((MenuType) -> Void)?
+    //var cells: [DynamicRow] = []
+    @IBOutlet var outputPeople: UILabel!
     
     //MARK: - Functions
     override func viewDidLoad() {
@@ -39,7 +41,7 @@ class AddPeopleViewController: UIViewController {
         textField1.text = "Choose One"
 
     }
-    
+
     @IBAction func dismissButton(_ sender: UIButton) {
         
         dismiss(animated: true)
@@ -51,22 +53,31 @@ class AddPeopleViewController: UIViewController {
     
     @IBAction func manual(_ sender: UIButton) {
         textField1.text = "Pulling up data from people pool . . ."
-        getPeople()
+        outputPeople.text = getPeople()
         //call function that pulls up people
     }
     
+    //MARK: - TableView Functions
     //function that displays a list of people
+
+//   let mangoCell = BasicCellWrapper(title: "Mango") { [self] text in
+//     print(text) // prints Mango
+//   }
     
     //MARK: - JSON functions
     
     /**
      Function that calls JSONPeopleReader to get a list of names from the pool
      */
-    func getPeople(){
+    func getPeople() -> String {
         let names = JSONPeopleReader.read()
+        print(names)
+        var nameString:String = ""
         for name in names {
             print(name)
+            nameString = nameString + "\n" + name
         }
+        return nameString
     }
 
     
