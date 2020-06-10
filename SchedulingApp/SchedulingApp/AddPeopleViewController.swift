@@ -57,7 +57,9 @@ class AddPeopleViewController: UIViewController {
     
     @IBAction func manual(_ sender: UIButton) {
         textField1.text = "Pulling up data from people pool . . ."
-        outputPeople.text = "TEXT" + getPeople()
+        var people: String = getPeople()
+        outputPeople.numberOfLines = people.split(separator: "\n").count
+        outputPeople.text = people
         //call function that pulls up people
     }
     
@@ -80,8 +82,8 @@ class AddPeopleViewController: UIViewController {
         var nameString:String = ""
         for name in names {
 //            print(name)
-//            nameString = nameString + "\n" + (name ?? "")
-            nameString = nameString + " " + (name ?? "")
+            nameString = nameString + "\n" + (name ?? "")
+//            nameString = nameString + " " + (name ?? "")
         }
         print("nameString: |\(nameString)|")
         return nameString
