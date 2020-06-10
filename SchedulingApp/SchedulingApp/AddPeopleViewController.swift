@@ -30,13 +30,13 @@ class AddPeopleViewController: UIViewController {
     @IBOutlet weak var textField1: UITextField!
     
 //MARK: - Properties
-<<<<<<< HEAD
+//<<<<<<< HEAD
     //var didTapMenuType: ((MenuType) -> Void)?
     //var cells: [DynamicRow] = []
     @IBOutlet var outputPeople: UILabel!
-=======
+//=======
      var didTapMenuType: ((MenuType) -> Void)?
->>>>>>> parent of dd0834b... Just in Case Commit
+//>>>>>>> parent of dd0834b... Just in Case Commit
     
     //MARK: - Functions
     override func viewDidLoad() {
@@ -73,19 +73,20 @@ class AddPeopleViewController: UIViewController {
     /**
      Function that calls JSONPeopleReader to get a list of names from the pool
      */
-<<<<<<< HEAD
+//<<<<<<< HEAD
     func getPeople() -> String {
-        let names = JSONPeopleReader.read()
+        let names: [String?] = JSONPeopleReader.read()
         print(names)
         var nameString:String = ""
         for name in names {
             print(name)
-            nameString = nameString + "\n" + name
+            nameString = nameString + "\n" + (name ?? "")
         }
         return nameString
-=======
-    func getPeople(){
-        JSONPeopleReader.read()
+    }
+//=======
+//    func getPeople(){
+//        JSONPeopleReader.read()
 //        let names = JSONPeopleReader.read()
 //
 //        for name in names {
@@ -93,8 +94,8 @@ class AddPeopleViewController: UIViewController {
 //        }
         
         
->>>>>>> parent of dd0834b... Just in Case Commit
-    }
+//>>>>>>> parent of dd0834b... Just in Case Commit
+//    }
 
     
 }

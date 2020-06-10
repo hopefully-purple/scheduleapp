@@ -18,7 +18,7 @@ class JSONPeopleReader
     //MARK: - Functions
     
     //This function reads
-    static func read()//-> Array<String>
+    static func read() -> [String?]//Array<String>
     {
         var array = [String?]()
         
@@ -79,7 +79,7 @@ class JSONPeopleReader
                 //}
             }
         }
-        //return array
+        return array
     }
         
 }
