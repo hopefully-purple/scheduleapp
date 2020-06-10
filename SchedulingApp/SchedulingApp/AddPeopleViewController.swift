@@ -57,7 +57,7 @@ class AddPeopleViewController: UIViewController {
     
     @IBAction func manual(_ sender: UIButton) {
         textField1.text = "Pulling up data from people pool . . ."
-        outputPeople.text = getPeople()
+        outputPeople.text = "TEXT" + getPeople()
         //call function that pulls up people
     }
     
@@ -76,12 +76,14 @@ class AddPeopleViewController: UIViewController {
 //<<<<<<< HEAD
     func getPeople() -> String {
         let names: [String?] = JSONPeopleReader.read()
-        print(names)
+//        print(names)
         var nameString:String = ""
         for name in names {
-            print(name)
-            nameString = nameString + "\n" + (name ?? "")
+//            print(name)
+//            nameString = nameString + "\n" + (name ?? "")
+            nameString = nameString + " " + (name ?? "")
         }
+        print("nameString: |\(nameString)|")
         return nameString
     }
 //=======

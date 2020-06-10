@@ -63,8 +63,8 @@ class JSONPeopleReader
                         for name in names
                         {
                             for (key, value) in name {
-                                print("\(value)")
-                                // array.append()
+//                                print("\(value)")
+                                array.append(value)
                             }
                         }
                     }
